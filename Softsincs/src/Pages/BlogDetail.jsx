@@ -42,9 +42,9 @@ const BlogDetail = () => {
             By <span className="font-semibold text-gray-800">{blog.author}</span> •{" "}
             {new Date(blog.date).toLocaleDateString()}
           </p>
-          <p className="italic">Estimated read time: 5 min</p>
+          <p className="italic">Estimated read time: {blog.readTime}</p>
         </div>
-        {/* Tags (optional, if you add tag/category support) */}
+
         {blog.tags && blog.tags.length > 0 && (
           <div className="mt-8 mb-10">
             <h3 className="text-lg font-semibold mb-2">Tags:</h3>
@@ -67,12 +67,11 @@ const BlogDetail = () => {
           className="rounded-lg w-full h-auto mb-8 shadow-md object-cover max-h-[500px]"
         />
 
-        <div className="prose max-w-none prose-lg prose-slate dark:prose-invert leading-relaxed">
-          <p className="whitespace-pre-line">{blog.content}</p>
-        </div>
-
-
-
+        {/* ✅ Render blog.content as HTML */}
+        <div
+          className="prose max-w-none prose-lg prose-slate dark:prose-invert leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+        />
       </article>
     </>
   );
