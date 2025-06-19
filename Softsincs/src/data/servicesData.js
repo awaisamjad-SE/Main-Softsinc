@@ -186,7 +186,7 @@ const servicesData = [
   tag: "Starter Kit",
   link: "/services/startup",
   slug: "startup",
-  bgImage: bg3,
+  bgImage: '/Services-Images/startup.jpg',
   description: "Everything you need to launch your online startup.",
   summary: "From branding to deployment, we help you turn your idea into a real digital product.",
   benefits: [
@@ -363,7 +363,7 @@ const servicesData = [
     tag: "Secure",
     link: "/services/security",
     slug: "security",
-    bgImage: bg5,
+    bgImage: '/Services-Images/Cyber.jpg',
     description: "Protect your business with our security solutions.",
     summary: "Safeguard your systems, data, and reputation with top-notch security.",
     benefits: [
