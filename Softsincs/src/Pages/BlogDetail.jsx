@@ -35,18 +35,21 @@ const BlogDetail = () => {
       />
 
       <article className="max-w-5xl mx-auto px-4 py-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">{blog.title}</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">
+          {blog.title}
+        </h1>
 
         <div className="flex flex-col md:flex-row md:items-center justify-between text-gray-500 text-sm mb-6">
           <p>
-            By <span className="font-semibold text-gray-800">{blog.author}</span> •{" "}
-            {new Date(blog.date).toLocaleDateString()}
+            By{" "}
+            <span className="font-semibold text-gray-800">{blog.author}</span>{" "}
+            • {new Date(blog.date).toLocaleDateString()}
           </p>
           <p className="italic">Estimated read time: {blog.readTime}</p>
         </div>
 
         {blog.tags && blog.tags.length > 0 && (
-          <div className="mt-8 mb-10">
+          <div className="mt-4 mb-10">
             <h3 className="text-lg font-semibold mb-2">Tags:</h3>
             <div className="flex flex-wrap gap-2">
               {blog.tags.map((tag, index) => (
@@ -61,13 +64,14 @@ const BlogDetail = () => {
           </div>
         )}
 
-        <img
-          src={blog.image}
-          alt={blog.title}
-          className="rounded-lg w-full h-auto mb-8 shadow-md object-cover max-h-[500px]"
-        />
+        {blog.image && (
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="rounded-lg w-full h-auto mb-10 shadow-lg object-cover max-h-[500px]"
+          />
+        )}
 
-        {/* ✅ Render blog.content as HTML */}
         <div
           className="prose max-w-none prose-lg prose-slate dark:prose-invert leading-relaxed"
           dangerouslySetInnerHTML={{ __html: blog.content }}

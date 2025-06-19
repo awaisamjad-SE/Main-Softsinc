@@ -10,7 +10,7 @@ const servicesData = [
     tag: "Hot",
     link: "/services/ai",
     slug: "ai",
-    bgImage: bg1,
+    bgImage: '/Services-Images/AI.jpg',
     description: "We build cutting-edge AI solutions.",
     summary: "Harness the power of artificial intelligence to automate, predict, and evolve your business processes.",
     benefits: [
@@ -32,7 +32,7 @@ const servicesData = [
   tag: "Trending",
   link: "/services/marketing",
   slug: "marketing",
-  bgImage: bg1,
+  bgImage: '/Services-Images/Digital-Marketing.jpg',
   description: "Grow your business with digital strategies.",
   summary: "Reach your target audience and boost your brand with data-driven digital marketing.",
   benefits: [
@@ -54,7 +54,7 @@ const servicesData = [
   tag: "Popular",
   link: "/services/ecommerce",
   slug: "ecommerce",
-  bgImage: bg2,
+  bgImage: '/Services-Images/Ecommerce.jpg',
   description: "Launch your online store with powerful features.",
   summary: "We develop scalable and secure e-commerce platforms tailored to your business needs.",
   benefits: [
@@ -76,7 +76,7 @@ const servicesData = [
   tag: "Creative",
   link: "/services/uiux",
   slug: "uiux",
-  bgImage: bg3,
+  bgImage: '/Services-Images/UX.jpg',
   description: "Engaging and intuitive user experiences.",
   summary: "We design beautiful interfaces that are both functional and user-focused.",
   benefits: [
@@ -120,7 +120,7 @@ const servicesData = [
   tag: "Insightful",
   link: "/services/data",
   slug: "data",
-  bgImage: bg5,
+  bgImage: '/Services-Images/Data-Analytics.jpg',
   description: "Turn your data into actionable insights.",
   summary: "Leverage analytics to make smarter decisions and uncover hidden opportunities.",
   benefits: [
@@ -164,7 +164,7 @@ const servicesData = [
   tag: "Core",
   link: "/services/python",
   slug: "python",
-  bgImage: bg2,
+  bgImage: '/Services-Images/Python.jpg',
   description: "Powerful backend development using Python.",
   summary: "From web apps to data science – we build scalable Python-based solutions.",
   benefits: [
@@ -297,7 +297,7 @@ const servicesData = [
     tag: "New",
     link: "/services/web",
     slug: "web",
-    bgImage: bg2,
+    bgImage: '/Services-Images/Web-Design.jpg',
     description: "Beautiful and responsive web design.",
     summary: "Create stunning websites that are fast, responsive, and user-friendly.",
     benefits: [
