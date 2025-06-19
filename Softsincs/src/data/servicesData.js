@@ -98,7 +98,7 @@ const servicesData = [
   tag: "Efficient",
   link: "/services/devops",
   slug: "devops",
-  bgImage: bg4,
+  bgImage: '/Services-Images/Devops.jpg',
   description: "Streamline your development and deployment processes.",
   summary: "Adopt DevOps practices to improve collaboration and automate workflows.",
   benefits: [
@@ -142,7 +142,7 @@ const servicesData = [
   tag: "Efficient",
   link: "/services/automation",
   slug: "automation",
-  bgImage: bg1,
+  bgImage: '/Services-Images/ProcessA.jpg', 
   description: "Automate repetitive tasks to save time and reduce errors.",
   summary: "We help businesses automate workflows using custom scripts, bots, and integrations.",
   benefits: [
@@ -208,7 +208,7 @@ const servicesData = [
   tag: "Student Support",
   link: "/services/final-year",
   slug: "final-year",
-  bgImage: bg4,
+  bgImage: '/Services-Images/FYP.jpg',
   description: "Helping students plan and build their final year projects.",
   summary: "We provide end-to-end guidance from project selection to development and documentation.",
   benefits: [
@@ -230,7 +230,7 @@ const servicesData = [
   tag: "Scalable",
   link: "/services/ecommerce-pro",
   slug: "ecommerce-pro",
-  bgImage: bg5,
+  bgImage: '/Services-Images/AdvancedE.jpg',
   description: "Scalable e-commerce platforms for growing businesses.",
   summary: "We go beyond basic online stores and build enterprise-grade solutions.",
   benefits: [
@@ -252,7 +252,7 @@ const servicesData = [
   tag: "Decentralized",
   link: "/services/blockchain",
   slug: "blockchain",
-  bgImage: bg1,
+  bgImage: '/Services-Images/Block.jpg',
   description: "Build trust and transparency with blockchain.",
   summary: "We develop smart contracts, DApps, and blockchain-based solutions for businesses.",
   benefits: [
@@ -319,7 +319,7 @@ const servicesData = [
     tag: "Featured",
     link: "/services/mobile",
     slug: "mobile",
-    bgImage: bg3,
+    bgImage: '/Services-Images/MobileApp.jpg', 
     description: "Custom mobile applications for iOS and Android.",
     summary: "We create intuitive and feature-rich mobile applications.",
     benefits: [
@@ -341,7 +341,7 @@ const servicesData = [
     tag: "Cloud",
     link: "/services/cloud",
     slug: "cloud",
-    bgImage: bg4,
+    bgImage: '/Services-Images/Cloud.jpg',
     description: "Secure and scalable cloud services.",
     summary: "Scale your infrastructure with our cloud solutions.",
     benefits: [
