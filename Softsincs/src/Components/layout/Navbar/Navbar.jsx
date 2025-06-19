@@ -33,7 +33,7 @@ const mobileMenus = [
     ],
   },
   {
-    title: 'Join Devsinc',
+    title: 'Join Softsinc',
     links: [
       { label: 'Careers', to: '/careers' },
       { label: 'Internships', to: '/internships' },
@@ -49,13 +49,18 @@ const Navbar = () => {
   const lastScrollTop = useRef(0);
   const location = useLocation();
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
   // Detect scroll position and direction
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
-      setScrolled(currentScrollTop > 50);
+      setScrolled(currentScrollTop > 10);
 
-      if (currentScrollTop > lastScrollTop.current) {
+      if (currentScrollTop > lastScrollTop.current && currentScrollTop > 100) {
         // Scrolling down
         setShowNavbar(false);
       } else {
@@ -74,17 +79,17 @@ const Navbar = () => {
   };
 
   const navStyle = scrolled
-    ? 'bg-[#e4e7ff] text-[#2e35d7]'
+    ? 'bg-white/90 backdrop-blur-md shadow-sm text-[#2e35d7]'
     : 'bg-transparent text-white';
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out transform ${
-        navStyle
-      } ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      } ${navStyle}`}
     >
-      <div className="flex items-center justify-between px-4 py-1 mx-auto max-w-7xl">
-        <Link to="/">
+      <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl sm:px-6">
+        <Link to="/" className="flex items-center">
           <Logo />
         </Link>
 
@@ -92,7 +97,7 @@ const Navbar = () => {
         <div className="custom:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-inherit"
+            className="p-2 transition-colors rounded-md text-inherit hover:bg-white/20"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -100,27 +105,31 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="relative z-40 hidden gap-8 font-medium custom:flex">
+        <div className="relative z-40 items-center hidden gap-8 font-medium custom:flex">
           {mobileMenus.map((menu, idx) => (
             <div key={idx} className="relative group">
               <button
-                className="flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
+                className="flex items-center gap-1 px-1 py-2 font-medium transition-colors duration-200 hover:text-blue-600"
                 type="button"
               >
                 {menu.title}
                 <ChevronDown
-                  size={14}
-                  className="transition-transform duration-300 group-hover:rotate-180"
+                  size={16}
+                  className="transition-transform duration-200 group-hover:rotate-180"
                 />
               </button>
 
-              <div className="absolute left-0 top-full mt-2 bg-white shadow rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 pointer-events-auto min-w-[160px]">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-black/5 backdrop-blur-lg shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 pointer-events-auto min-w-[200px] transform group-hover:translate-y-0 translate-y-1 border border-white/10">
                 <ul className="py-2">
                   {menu.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         to={link.to}
-                        className="block px-4 py-2 text-gray-600 transition-colors duration-200 hover:bg-blue-50 hover:text-blue-600"
+                        className={`block px-4 py-2 transition-colors duration-200 ${
+                          scrolled
+                            ? 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/50'
+                            : 'text-white hover:text-white hover:bg-white/10'
+                        }`}
                       >
                         {link.label}
                       </Link>
@@ -130,17 +139,35 @@ const Navbar = () => {
               </div>
             </div>
           ))}
+          <Link 
+            to="/contact" 
+            className={`px-4 py-2 transition-colors duration-200 rounded-md ${
+              scrolled
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-white text-blue-600 hover:bg-white/90'
+            }`}
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="px-6 py-4 space-y-4 text-gray-800 bg-white border-t shadow-lg custom:hidden">
+        <div
+          className={`px-6 py-4 space-y-4 border-t ${
+            scrolled ? 'border-gray-100' : 'border-white/10'
+          } shadow-lg custom:hidden ${
+            scrolled ? 'bg-white/95' : 'bg-black/10'
+          } backdrop-blur-lg`}
+        >
           {mobileMenus.map((menu, idx) => (
             <div key={idx}>
               <button
                 onClick={() => toggleSubmenu(idx)}
-                className="flex items-center justify-between w-full font-semibold text-left"
+                className={`flex items-center justify-between w-full py-2 font-semibold text-left transition-colors ${
+                  scrolled ? 'hover:text-blue-600' : 'hover:text-white'
+                }`}
               >
                 {menu.title}
                 {expandedMenu === idx ? (
@@ -150,13 +177,15 @@ const Navbar = () => {
                 )}
               </button>
               {expandedMenu === idx && (
-                <ul className="pl-4 mt-2 space-y-2">
+                <ul className="pl-4 mt-2 space-y-2 border-l-2 border-blue-100">
                   {menu.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         to={link.to}
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-gray-600 transition hover:text-blue-600"
+                        className={`block py-1.5 transition ${
+                          scrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/80 hover:text-white'
+                        }`}
                       >
                         {link.label}
                       </Link>
@@ -166,6 +195,17 @@ const Navbar = () => {
               )}
             </div>
           ))}
+          <Link
+            to="/contact"
+            className={`block w-full text-center py-2.5 rounded-md mt-4 transition-colors ${
+              scrolled
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-white text-blue-600 hover:bg-white/90'
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact Us
+          </Link>
         </div>
       )}
     </nav>
