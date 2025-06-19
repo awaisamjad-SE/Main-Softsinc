@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: '0.0.0.0',   // 🔓 Allows access from your mobile on same network
-    port: 5173,        // (Optional) You can change the port if needed
+  build: {
+    outDir: 'dist'
   },
+  server: {
+    historyApiFallback: true // for local dev if needed
+  }
 });
