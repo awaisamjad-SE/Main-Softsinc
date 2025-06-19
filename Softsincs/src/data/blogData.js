@@ -3,108 +3,8 @@ import blogImg2 from '../assets/Images/background.jpg';
 import blogImg3 from '../assets/Images/background.jpg';
 const blogData = [
 
-{
-  slug: "ai-education",
-  title: "Revolutionizing Education with AI",
-  image: '/Blog-Images/Revolution.jpg',
-  summary: "AI is transforming education through personalized learning, predictive analytics, intelligent tutoring systems, and more—empowering both students and educators for a smarter future.",
- content: `
-  <h1><i class="fas fa-robot"></i> AI in Education: Personalized & Inclusive Learning</h1>
 
-  <img src="/Images/blog/ai-education-main.jpg" alt="AI in Education" style="margin: 20px 0; max-width: 100%; border-radius: 12px;" />
-
-  <p>Artificial Intelligence (AI) is transforming education, making learning more adaptive, accessible, and efficient. From personalized lessons to automation, AI tools empower both students and educators.</p>
-
-  <h2><i class="fas fa-user-graduate"></i> 1. Personalized Learning</h2>
-  <p>AI tracks student progress, evaluates strengths and weaknesses, and dynamically customizes content for optimal learning pace and style.</p>
-  <ul>
-    <li><i class="fas fa-check-circle"></i> Adaptive quizzes and exercises</li>
-    <li><i class="fas fa-check-circle"></i> Real-time feedback</li>
-    <li><i class="fas fa-check-circle"></i> Customized lesson plans</li>
-  </ul>
-  <p>Popular platforms like <strong>Khan Academy</strong> and <strong>Duolingo</strong> leverage these techniques to enhance engagement and retention.</p>
-
-  <h2><i class="fas fa-headset"></i> 2. Smart Tutors & 24/7 Support</h2>
-  <p>AI-powered virtual assistants provide instant help anytime, ensuring continuous learning outside traditional classroom hours.</p>
-  <img src="/Images/blog/ai-tutor.jpg" alt="AI Tutor" style="float:right; width: 40%; margin: 0 0 15px 15px; border-radius: 8px;" />
-  <p>Apps like <strong>Socratic by Google</strong> and <strong>Quizlet</strong> answer queries, explain concepts, and quiz students interactively.</p>
-
-  <h2><i class="fas fa-chart-line"></i> 3. Predictive Analytics for Student Success</h2>
-  <p>By analyzing attendance, grades, and behavior, AI predicts students who may need extra support, allowing educators to intervene proactively.</p>
-
-  <h2><i class="fas fa-cogs"></i> 4. Automation of Repetitive Tasks</h2>
-  <p>AI reduces educators' workloads by automating grading, attendance tracking, and report generation.</p>
-  <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
-    <thead>
-      <tr style="background:#f0f4f8;">
-        <th style="padding: 10px; border: 1px solid #ddd;">Task</th>
-        <th style="padding: 10px; border: 1px solid #ddd;">AI Application</th>
-        <th style="padding: 10px; border: 1px solid #ddd;">Benefit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ddd;">Essay Grading</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Natural Language Processing</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Fast, consistent feedback</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ddd;">Attendance Monitoring</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Facial Recognition / Biometric Verification</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Accurate and automated records</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ddd;">Plagiarism Checks</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Pattern Matching Algorithms</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Ensures originality and fairness</td>
-      </tr>
-    </tbody>
-  </table>
-  <p style="margin-top: 10px;"><strong>Example:</strong> Turnitin uses AI to efficiently scan and evaluate essays for plagiarism and grammar in seconds.</p>
-
-  <h2><i class="fas fa-universal-access"></i> 5. Accessible Learning for Everyone</h2>
-  <p>AI-powered tools break down barriers for students with disabilities:</p>
-  <ul>
-    <li><i class="fas fa-robot"></i> Speech-to-text and text-to-speech for those with visual or hearing impairments</li>
-    <li><i class="fas fa-language"></i> Real-time translation for multilingual classrooms</li>
-    <li><i class="fas fa-eye-slash"></i> Simplified interfaces for cognitive disabilities</li>
-  </ul>
-  <p>Microsoft's <strong>Immersive Reader</strong> is a leading example, supporting dyslexic learners with read-aloud and highlighting features.</p>
-
-  <blockquote style="border-left: 4px solid #3b82f6; padding-left: 15px; margin: 30px 0; font-style: italic; color: #555;">
-    “The future of education is a blend of technology and human touch.” – <em>EdTech Journal</em>
-  </blockquote>
-
-  <h2><i class="fas fa-exclamation-triangle"></i> 6. Challenges & Ethical Considerations</h2>
-  <p>Despite many benefits, integrating AI in education requires caution:</p>
-  <ul>
-    <li><i class="fas fa-shield-alt"></i> <strong>Data Privacy:</strong> Protecting student data from misuse.</li>
-    <li><i class="fas fa-balance-scale"></i> <strong>Algorithmic Bias:</strong> Preventing discrimination or unfair treatment.</li>
-    <li><i class="fas fa-user-secret"></i> <strong>Transparency:</strong> Making AI decision-making understandable to users.</li>
-  </ul>
-
-  <h2><i class="fas fa-rocket"></i> 7. The Road Ahead</h2>
-  <p>As AI technologies evolve, expect more immersive and intuitive educational experiences powered by:</p>
-  <ul>
-    <li><i class="fas fa-vr-cardboard"></i> Virtual and Augmented Reality integration</li>
-    <li><i class="fas fa-robot"></i> Advanced intelligent tutoring systems</li>
-    <li><i class="fas fa-network-wired"></i> Global collaborative learning platforms</li>
-  </ul>
-
-  <img src="/Images/blog/ai-future.jpg" alt="Future of AI Education" style="margin: 25px 0; max-width: 100%; border-radius: 12px;" />
-
-  <h2><i class="fas fa-check-circle"></i> Conclusion</h2>
-  <p>AI is a powerful ally for educators and learners alike. Used ethically and thoughtfully, it can revolutionize education by making it personalized, accessible, and more effective—preparing students for a digital future.</p>
-`,
-
-
-  author: "Admin",
-  date: "June 10, 2025",
-  tags: ["AI", "Education", "EdTech", "Smart Classrooms", "Future Learning"],
-  category: "Artificial Intelligence",
-  readTime: "5-6 min"
-}
-  ,
+  
   
   {
   "slug": "custom-web-app-development",
@@ -207,6 +107,107 @@ const blogData = [
 <h2><i class="fas fa-check-circle"></i> Conclusion</h2>
 <p>Custom web app development is not just about building software—it's about solving real business challenges with precision. Whether you need to streamline operations, enhance customer experience, or future-proof your business, a tailored web app is the smart way forward. Invest in control, flexibility, and long-term value.</p>
 `
+},
+{
+  slug: "ai-education",
+  title: "Revolutionizing Education with AI",
+  image: '/Blog-Images/Revolution.jpg',
+  summary: "AI is transforming education through personalized learning, predictive analytics, intelligent tutoring systems, and more—empowering both students and educators for a smarter future.",
+ content: `
+  <h1><i class="fas fa-robot"></i> AI in Education: Personalized & Inclusive Learning</h1>
+
+  <img src="/Images/blog/ai-education-main.jpg" alt="AI in Education" style="margin: 20px 0; max-width: 100%; border-radius: 12px;" />
+
+  <p>Artificial Intelligence (AI) is transforming education, making learning more adaptive, accessible, and efficient. From personalized lessons to automation, AI tools empower both students and educators.</p>
+
+  <h2><i class="fas fa-user-graduate"></i> 1. Personalized Learning</h2>
+  <p>AI tracks student progress, evaluates strengths and weaknesses, and dynamically customizes content for optimal learning pace and style.</p>
+  <ul>
+    <li><i class="fas fa-check-circle"></i> Adaptive quizzes and exercises</li>
+    <li><i class="fas fa-check-circle"></i> Real-time feedback</li>
+    <li><i class="fas fa-check-circle"></i> Customized lesson plans</li>
+  </ul>
+  <p>Popular platforms like <strong>Khan Academy</strong> and <strong>Duolingo</strong> leverage these techniques to enhance engagement and retention.</p>
+
+  <h2><i class="fas fa-headset"></i> 2. Smart Tutors & 24/7 Support</h2>
+  <p>AI-powered virtual assistants provide instant help anytime, ensuring continuous learning outside traditional classroom hours.</p>
+  <img src="/Images/blog/ai-tutor.jpg" alt="AI Tutor" style="float:right; width: 40%; margin: 0 0 15px 15px; border-radius: 8px;" />
+  <p>Apps like <strong>Socratic by Google</strong> and <strong>Quizlet</strong> answer queries, explain concepts, and quiz students interactively.</p>
+
+  <h2><i class="fas fa-chart-line"></i> 3. Predictive Analytics for Student Success</h2>
+  <p>By analyzing attendance, grades, and behavior, AI predicts students who may need extra support, allowing educators to intervene proactively.</p>
+
+  <h2><i class="fas fa-cogs"></i> 4. Automation of Repetitive Tasks</h2>
+  <p>AI reduces educators' workloads by automating grading, attendance tracking, and report generation.</p>
+  <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+    <thead>
+      <tr style="background:#f0f4f8;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Task</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">AI Application</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Benefit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Essay Grading</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Natural Language Processing</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Fast, consistent feedback</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Attendance Monitoring</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Facial Recognition / Biometric Verification</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Accurate and automated records</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Plagiarism Checks</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Pattern Matching Algorithms</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Ensures originality and fairness</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 10px;"><strong>Example:</strong> Turnitin uses AI to efficiently scan and evaluate essays for plagiarism and grammar in seconds.</p>
+
+  <h2><i class="fas fa-universal-access"></i> 5. Accessible Learning for Everyone</h2>
+  <p>AI-powered tools break down barriers for students with disabilities:</p>
+  <ul>
+    <li><i class="fas fa-robot"></i> Speech-to-text and text-to-speech for those with visual or hearing impairments</li>
+    <li><i class="fas fa-language"></i> Real-time translation for multilingual classrooms</li>
+    <li><i class="fas fa-eye-slash"></i> Simplified interfaces for cognitive disabilities</li>
+  </ul>
+  <p>Microsoft's <strong>Immersive Reader</strong> is a leading example, supporting dyslexic learners with read-aloud and highlighting features.</p>
+
+  <blockquote style="border-left: 4px solid #3b82f6; padding-left: 15px; margin: 30px 0; font-style: italic; color: #555;">
+    “The future of education is a blend of technology and human touch.” – <em>EdTech Journal</em>
+  </blockquote>
+
+  <h2><i class="fas fa-exclamation-triangle"></i> 6. Challenges & Ethical Considerations</h2>
+  <p>Despite many benefits, integrating AI in education requires caution:</p>
+  <ul>
+    <li><i class="fas fa-shield-alt"></i> <strong>Data Privacy:</strong> Protecting student data from misuse.</li>
+    <li><i class="fas fa-balance-scale"></i> <strong>Algorithmic Bias:</strong> Preventing discrimination or unfair treatment.</li>
+    <li><i class="fas fa-user-secret"></i> <strong>Transparency:</strong> Making AI decision-making understandable to users.</li>
+  </ul>
+
+  <h2><i class="fas fa-rocket"></i> 7. The Road Ahead</h2>
+  <p>As AI technologies evolve, expect more immersive and intuitive educational experiences powered by:</p>
+  <ul>
+    <li><i class="fas fa-vr-cardboard"></i> Virtual and Augmented Reality integration</li>
+    <li><i class="fas fa-robot"></i> Advanced intelligent tutoring systems</li>
+    <li><i class="fas fa-network-wired"></i> Global collaborative learning platforms</li>
+  </ul>
+
+  <img src="/Images/blog/ai-future.jpg" alt="Future of AI Education" style="margin: 25px 0; max-width: 100%; border-radius: 12px;" />
+
+  <h2><i class="fas fa-check-circle"></i> Conclusion</h2>
+  <p>AI is a powerful ally for educators and learners alike. Used ethically and thoughtfully, it can revolutionize education by making it personalized, accessible, and more effective—preparing students for a digital future.</p>
+`,
+
+
+  author: "Admin",
+  date: "June 10, 2025",
+  tags: ["AI", "Education", "EdTech", "Smart Classrooms", "Future Learning"],
+  category: "Artificial Intelligence",
+  readTime: "5-6 min"
 },
  {
     slug: "remote-work-future",

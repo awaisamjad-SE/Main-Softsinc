@@ -29,7 +29,7 @@ import CareerPage from './Pages/CareerPage';
 import JobDetail from './Pages/JobDetail';
 import InternshipPage from "./Pages/InternshipPage";
 import InternshipDetail from "./Pages/InternshipDetail";
-
+import StartupPage from './Pages/Startup';
 // HomePage composed of multiple sections
 const HomePage = () => (
   <>
@@ -64,6 +64,7 @@ const AppRoutes = () => (
     <Route path="/carrers/:slug" element={<JobDetail />} />
     <Route path="/internships" element={<InternshipPage />} />
     <Route path="/internships/:slug" element={<InternshipDetail />} />
+    <Route path="/startups" element={<StartupPage />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
