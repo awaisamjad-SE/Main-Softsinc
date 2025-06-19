@@ -2,7 +2,8 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import servicesData from "../data/servicesData";
 import Hero2 from "../Components/layout/Hero2";
-import bgServices from "../assets/Images/background.jpg"; // Use a relevant hero image
+import bgServices from "../assets/Images/background.jpg";
+import Process from "../Components/layout/Process";
 
 function ServiceDetail() {
   const { slug } = useParams();
@@ -38,51 +39,31 @@ function ServiceDetail() {
         backgroundImage={bgServices}
       />
 
-      <main className="max-w-5xl mx-auto px-4 py-12">
-        {/* Hero Image */}
-        {service.bgImage && (
-          <section aria-label="Service banner image" className="mb-10">
-            <img
-              src={service.bgImage}
-              alt={`${service.title} banner`}
-              className="w-full h-72 object-cover rounded-xl shadow-md"
-              loading="lazy"
-            />
-          </section>
-        )}
+      <main className="max-w-6xl mx-auto px-4 md:px-8 py-14">
 
         {/* Title & Description */}
-        <article className="mb-10">
-          <h1 className="text-4xl font-extrabold text-[#2e35d7] mb-4">{service.title}</h1>
+        <section className="mb-12">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2e35d7] mb-4">{service.title}</h1>
           <p className="text-lg text-gray-700 leading-relaxed">{service.description}</p>
-        </article>
+        </section>
 
         {/* Summary */}
         {service.summary && (
-          <section className="mb-10 border-t border-gray-200 pt-8">
-            <h2 className="text-3xl font-semibold mb-4">Summary</h2>
-            <p className="text-gray-700 leading-relaxed">{service.summary}</p>
+          <section className="mb-12">
+            <h2 className="text-3xl font-semibold mb-4">Overview</h2>
+            <p className="text-gray-800 leading-relaxed">{service.summary}</p>
           </section>
         )}
 
         {/* Benefits */}
-        {service.benefits && (
-          <section className="mb-10 border-t border-gray-200 pt-8">
+        {service.benefits?.length > 0 && (
+          <section className="mb-12">
             <h2 className="text-3xl font-semibold mb-6">Benefits</h2>
-            <ul className="list-disc list-inside text-gray-700 space-y-3">
-              {service.benefits.map((item, index) => (
-                <li key={index} className="flex items-center">
-                  {/* Replace font-awesome icon with SVG check for better compatibility */}
-                  <svg
-                    className="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
+            <ul className="grid md:grid-cols-2 gap-4 text-gray-800 list-disc list-inside">
+              {service.benefits.map((item, i) => (
+                <li key={i} className="flex gap-2 items-start">
+                  <svg className="w-5 h-5 mt-1 text-green-500" fill="none" stroke="currentColor" strokeWidth="2"
+                    viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                   <span>{item}</span>
                 </li>
               ))}
@@ -91,45 +72,25 @@ function ServiceDetail() {
         )}
 
         {/* Features */}
-        {service.features && (
-          <section className="mb-10 border-t border-gray-200 pt-8">
-            <h2 className="text-3xl font-semibold mb-8">Key Features</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {service.features.map((feature, index) => (
-                <article
-                  key={index}
-                  className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300"
-                >
-                  {/* If feature.icon is a string class, consider replacing with SVG or React Icon */}
-                  <div
-                    className={`text-4xl text-[#2e35d7] mb-4`}
-                    aria-hidden="true"
-                  >
-                    {feature.icon ? <i className={feature.icon}></i> : null}
+        {service.features?.length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-3xl font-semibold mb-6">Key Features</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {service.features.map((feature, i) => (
+                <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+                  <div className="text-3xl text-[#2e35d7] mb-3">
+                    {feature.icon ? <i className={feature.icon}></i> : <i className="fas fa-star"></i>}
                   </div>
-                  <h3 className="font-bold text-xl mb-2">{feature.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{feature.description}</p>
-                </article>
+                  <h3 className="text-xl font-bold mb-2">{feature.label}</h3>
+                </div>
               ))}
             </div>
           </section>
         )}
-
-        {/* Process */}
-        {service.process && (
-          <section className="mb-12 border-t border-gray-200 pt-8">
-            <h2 className="text-3xl font-semibold mb-6">Our Process</h2>
-            <ol className="list-decimal list-inside text-gray-700 space-y-3 leading-relaxed">
-              {service.process.map((step, index) => (
-                <li key={index}>{step}</li>
-              ))}
-            </ol>
-          </section>
-        )}
-
-        {/* Call To Action */}
-        <section className="text-center mt-12">
-          <h3 className="text-2xl font-bold mb-4 text-[#2e35d7]">
+<Process/>
+        {/* CTA */}
+        <div className="text-center mt-12 bg-[#f9f9ff] py-12 rounded-lg shadow-inner">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#2e35d7]">
             Ready to take the next step?
           </h3>
           <Link
@@ -138,7 +99,7 @@ function ServiceDetail() {
           >
             Contact Us
           </Link>
-        </section>
+        </div>
       </main>
     </div>
   );
