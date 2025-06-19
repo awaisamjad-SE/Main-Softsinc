@@ -49,22 +49,18 @@ const Navbar = () => {
   const lastScrollTop = useRef(0);
   const location = useLocation();
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
 
-  // Detect scroll position and direction
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
       setScrolled(currentScrollTop > 10);
 
       if (currentScrollTop > lastScrollTop.current && currentScrollTop > 100) {
-        // Scrolling down
         setShowNavbar(false);
       } else {
-        // Scrolling up
         setShowNavbar(true);
       }
       lastScrollTop.current = currentScrollTop <= 0 ? 0 : currentScrollTop;
@@ -78,15 +74,11 @@ const Navbar = () => {
     setExpandedMenu((prev) => (prev === index ? null : index));
   };
 
-  const navStyle = scrolled
-    ? 'bg-white/90 backdrop-blur-md shadow-sm text-[#2e35d7]'
-    : 'bg-transparent text-white';
-
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         showNavbar ? 'translate-y-0' : '-translate-y-full'
-      } ${navStyle}`}
+      } ${scrolled ? 'bg-black/20 backdrop-blur-sm' : 'bg-transparent'} text-white`}
     >
       <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl sm:px-6">
         <Link to="/" className="flex items-center">
@@ -97,7 +89,7 @@ const Navbar = () => {
         <div className="custom:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 transition-colors rounded-md text-inherit hover:bg-white/20"
+            className="p-2 transition-colors rounded-md hover:bg-white/20"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -109,7 +101,7 @@ const Navbar = () => {
           {mobileMenus.map((menu, idx) => (
             <div key={idx} className="relative group">
               <button
-                className="flex items-center gap-1 px-1 py-2 font-medium transition-colors duration-200 hover:text-blue-600"
+                className="flex items-center gap-1 px-1 py-2 transition-colors duration-200 hover:text-white/80"
                 type="button"
               >
                 {menu.title}
@@ -119,17 +111,13 @@ const Navbar = () => {
                 />
               </button>
 
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-black/5 backdrop-blur-lg shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 pointer-events-auto min-w-[200px] transform group-hover:translate-y-0 translate-y-1 border border-white/10">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-transparent shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 pointer-events-auto min-w-[200px] transform group-hover:translate-y-0 translate-y-1">
                 <ul className="py-2">
                   {menu.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         to={link.to}
-                        className={`block px-4 py-2 transition-colors duration-200 ${
-                          scrolled
-                            ? 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/50'
-                            : 'text-white hover:text-white hover:bg-white/10'
-                        }`}
+                        className="block px-4 py-2 text-white transition-colors duration-200 rounded hover:bg-white/10 hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -141,11 +129,7 @@ const Navbar = () => {
           ))}
           <Link 
             to="/contact" 
-            className={`px-4 py-2 transition-colors duration-200 rounded-md ${
-              scrolled
-                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                : 'bg-white text-blue-600 hover:bg-white/90'
-            }`}
+            className="px-4 py-2 text-white transition-colors duration-200 rounded-md bg-white/10 hover:bg-white/20"
           >
             Contact Us
           </Link>
@@ -154,20 +138,12 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div
-          className={`px-6 py-4 space-y-4 border-t ${
-            scrolled ? 'border-gray-100' : 'border-white/10'
-          } shadow-lg custom:hidden ${
-            scrolled ? 'bg-white/95' : 'bg-black/10'
-          } backdrop-blur-lg`}
-        >
+        <div className="px-6 py-4 space-y-4 border-t shadow-lg border-white/10 custom:hidden bg-black/20 backdrop-blur-sm">
           {mobileMenus.map((menu, idx) => (
             <div key={idx}>
               <button
                 onClick={() => toggleSubmenu(idx)}
-                className={`flex items-center justify-between w-full py-2 font-semibold text-left transition-colors ${
-                  scrolled ? 'hover:text-blue-600' : 'hover:text-white'
-                }`}
+                className="flex items-center justify-between w-full py-2 text-left transition-colors hover:text-white/80"
               >
                 {menu.title}
                 {expandedMenu === idx ? (
@@ -177,15 +153,13 @@ const Navbar = () => {
                 )}
               </button>
               {expandedMenu === idx && (
-                <ul className="pl-4 mt-2 space-y-2 border-l-2 border-blue-100">
+                <ul className="pl-4 mt-2 space-y-2 border-l-2 border-white/10">
                   {menu.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         to={link.to}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`block py-1.5 transition ${
-                          scrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/80 hover:text-white'
-                        }`}
+                        className="block py-1.5 text-white/80 transition hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -197,11 +171,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/contact"
-            className={`block w-full text-center py-2.5 rounded-md mt-4 transition-colors ${
-              scrolled
-                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                : 'bg-white text-blue-600 hover:bg-white/90'
-            }`}
+  className="block w-full text-center py-2.5 rounded-md mt-4 transition-colors bg-white text-blue-600 hover:bg-blue-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact Us

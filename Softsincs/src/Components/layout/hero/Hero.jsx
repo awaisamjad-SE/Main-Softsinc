@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroButtons from './HeroButtons';
-import bgVideo from '../../../assets/Images/hero2.mp4'
+import bgVideo from '../../../assets/Images/hero2.mp4';
 
 const Hero = () => {
   return (
@@ -15,13 +15,13 @@ const Hero = () => {
         playsInline
       />
 
-      {/* Overlay Content */}
-      <div className="relative z-10 flex items-center justify-center h-full bg-black/40">
-        <div className="max-w-3xl p-6 mx-auto text-center text-white md:p-10">
-          <h1 className="mb-4 text-4xl font-bold md:text-6xl">
+      {/* Transparent Overlay Content */}
+      <div className="relative z-10 flex items-center justify-center h-full bg-transparent">
+        <div className="max-w-3xl p-4 mx-auto text-center text-white md:p-8">
+          <h1 className="mb-4 text-4xl font-bold md:text-6xl drop-shadow-lg">
             Empowering Your Digital Future
           </h1>
-          <p className="mb-6 text-lg md:text-xl">
+          <p className="mb-6 text-lg md:text-xl drop-shadow">
             Custom software solutions that drive innovation and growth.
           </p>
 
