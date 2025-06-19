@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import Logo from './Logo';
@@ -45,12 +45,24 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollTop = useRef(0);
   const location = useLocation();
 
-  // Scroll listener
+  // Detect scroll position and direction
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollTop = window.scrollY;
+      setScrolled(currentScrollTop > 50);
+
+      if (currentScrollTop > lastScrollTop.current) {
+        // Scrolling down
+        setShowNavbar(false);
+      } else {
+        // Scrolling up
+        setShowNavbar(true);
+      }
+      lastScrollTop.current = currentScrollTop <= 0 ? 0 : currentScrollTop;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -62,14 +74,16 @@ const Navbar = () => {
   };
 
   const navStyle = scrolled
-    ? 'bg-[#e4e7ff] text-[#2e35d7] '
+    ? 'bg-[#e4e7ff] text-[#2e35d7]'
     : 'bg-transparent text-white';
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navStyle}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out transform ${
+        navStyle
+      } ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="flex items-center justify-between px-4 py-1 mx-auto max-w-7xl">
         <Link to="/">
           <Logo />
         </Link>
@@ -85,59 +99,55 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Desktop Navigation */}
         {/* Desktop Menu */}
-<div className="hidden custom:flex gap-8 font-medium relative z-40">
-  {mobileMenus.map((menu, idx) => (
-    <div
-      key={idx}
-      className="relative group"
-    >
-      <button
-        className="flex items-center gap-1 hover:text-blue-600 transition-colors duration-300"
-        type="button"
-      >
-        {menu.title}
-        <ChevronDown
-          size={14}
-          className="transition-transform duration-300 group-hover:rotate-180"
-        />
-      </button>
-
-      {/* Dropdown */}
-      <div
-        className="absolute left-0 top-full mt-2 bg-white shadow- rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 pointer-events-auto min-w-[160px]"
-      >
-        <ul className="py-2">
-          {menu.links.map((link, linkIdx) => (
-            <li key={linkIdx}>
-              <Link
-                to={link.to}
-                className="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+        <div className="relative z-40 hidden gap-8 font-medium custom:flex">
+          {mobileMenus.map((menu, idx) => (
+            <div key={idx} className="relative group">
+              <button
+                className="flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
+                type="button"
               >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  ))}
-</div>
+                {menu.title}
+                <ChevronDown
+                  size={14}
+                  className="transition-transform duration-300 group-hover:rotate-180"
+                />
+              </button>
 
+              <div className="absolute left-0 top-full mt-2 bg-white shadow rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 pointer-events-auto min-w-[160px]">
+                <ul className="py-2">
+                  {menu.links.map((link, linkIdx) => (
+                    <li key={linkIdx}>
+                      <Link
+                        to={link.to}
+                        className="block px-4 py-2 text-gray-600 transition-colors duration-200 hover:bg-blue-50 hover:text-blue-600"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="custom:hidden bg-white px-6 py-4 space-y-4 shadow-lg border-t text-gray-800">
+        <div className="px-6 py-4 space-y-4 text-gray-800 bg-white border-t shadow-lg custom:hidden">
           {mobileMenus.map((menu, idx) => (
             <div key={idx}>
               <button
                 onClick={() => toggleSubmenu(idx)}
-                className="w-full flex items-center justify-between text-left font-semibold"
+                className="flex items-center justify-between w-full font-semibold text-left"
               >
                 {menu.title}
-                {expandedMenu === idx ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {expandedMenu === idx ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               {expandedMenu === idx && (
                 <ul className="pl-4 mt-2 space-y-2">
@@ -146,7 +156,7 @@ const Navbar = () => {
                       <Link
                         to={link.to}
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-gray-600 hover:text-blue-600 transition"
+                        className="text-gray-600 transition hover:text-blue-600"
                       >
                         {link.label}
                       </Link>
