@@ -6,7 +6,7 @@ const blogData = [
 {
   slug: "ai-education",
   title: "Revolutionizing Education with AI",
-  image: blogImg1,
+  image: '/Blog-Images/Revolution.jpg',
   summary: "AI is transforming education through personalized learning, predictive analytics, intelligent tutoring systems, and more—empowering both students and educators for a smarter future.",
  content: `
   <h1><i class="fas fa-robot"></i> AI in Education: Personalized & Inclusive Learning</h1>
@@ -109,7 +109,7 @@ const blogData = [
   {
   "slug": "custom-web-app-development",
   "title": "Custom Web App Development: What You Need to Know",
-    image: blogImg1,
+  image: '/Blog-Images/Custom-Software.jpg',
   "summary": "Discover how custom web app development empowers businesses with scalable, tailored solutions—enhancing productivity, performance, and digital presence.",
   "author": "Admin",
   "date": "June 20, 2025",
@@ -211,7 +211,7 @@ const blogData = [
  {
     slug: "remote-work-future",
     title: "Why Remote Work Is the Future",
-    image: blogImg3,
+    image: '/Blog-Images/Future-Work.jpg',
     summary: "Discover the rise of remote work, its benefits, and how businesses can adapt.",
     content: `
 Remote work is no longer an exception—it's becoming the default in many industries.
@@ -236,7 +236,7 @@ In the post-pandemic world, hybrid and remote models will dominate for years to 
   {
     slug: "ai-in-schools",
     title: "AI in Schools: Opportunities and Risks",
-    image: blogImg1,
+    image: '/Blog-Images/AI School.jpg',
     summary: "The role of AI in primary and secondary education and how it changes learning.",
     content: `
 AI is becoming integral in K-12 schools as well. From adaptive learning platforms to automated feedback, AI offers exciting possibilities.
@@ -259,7 +259,7 @@ Educators and policymakers must work together to ensure safe, equitable, and eff
   {
     slug: "future-classrooms",
     title: "The Future of Smart Classrooms",
-    image: blogImg1,
+    image: '/Blog-Images/Future-School.jpg',
     summary: "How smart boards, IoT devices, and AI will transform education spaces.",
     content: `
 Smart classrooms are evolving with the help of:
@@ -282,7 +282,7 @@ As investment in EdTech grows, expect smart learning environments to become the 
   {
   slug: "learning-python-2025",
   title: "Why Learning Python in 2025 Still Makes Sense",
-  image: blogImg2,
+  image: '/Blog-Images/Learning Path.jpg',
   summary: "Python continues to be the top choice for beginners and professionals in data science, web development, and automation.",
   content: `
 Python has been leading the programming world for over a decade, and in 2025, it’s stronger than ever.
@@ -310,7 +310,7 @@ Python remains a must-have language for anyone serious about a future in tech.
 {
   slug: "cybersecurity-2025",
   title: "Top Cybersecurity Threats and Trends in 2025",
-  image: blogImg3,
+  image: '/Blog-Images/Cyber-1.jpg',
   summary: "Explore the evolving cybersecurity landscape and how to protect against modern digital threats.",
   content: `
 Cybersecurity has taken center stage in 2025 as global cybercrime rates skyrocket.
@@ -338,7 +338,7 @@ In 2025, every organization is a potential target—proactive defense is key.
 {
   slug: "chatgpt-for-developers",
   title: "Using ChatGPT as a Developer Tool in 2025",
-  image: blogImg1,
+  image: '/Blog-Images/Chatgpt.jpg',
   summary: "Discover how developers are integrating ChatGPT in workflows for code generation, debugging, and documentation.",
   content: `
 ChatGPT has evolved into a powerful assistant for developers worldwide.
@@ -362,7 +362,7 @@ Combine ChatGPT with tools like GitHub Copilot, and your productivity as a coder
 {
   slug: "freelancing-in-2025",
   title: "The Freelance Economy in 2025: What's New?",
-  image: blogImg2,
+  image: '/Blog-Images/Freelancing.jpg',
   summary: "Explore the new trends, platforms, and challenges in freelancing as the gig economy grows rapidly.",
   content: `
 Freelancing has shifted from a side hustle to a main career path for millions.
@@ -389,7 +389,7 @@ To succeed in 2025, freelancers must niche down, market strategically, and const
 {
   slug: "web3-impact-education",
   title: "How Web3 Could Reshape Education",
-  image: blogImg3,
+  image: '/Blog-Images/web3.jpg',
   summary: "Web3 is not just about crypto—it's creating transparent, decentralized educational ecosystems.",
   content: `
 Web3, based on blockchain technology, is now making waves in the education sector.
