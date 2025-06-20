@@ -20,7 +20,6 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
           <p>Email: <a href="mailto:softsincs@gmail.com" className="underline">softsincs@gmail.com</a></p>
           <p>Phone: <a href="tel:+923473706598" className="underline">+92 347 3706598</a></p>
-          <p>Phone: <a href="tel:+923002611196" className="underline">+92 300 2611196</a></p>
           <p>Headquarters: 643 L Block, Sabzazar, Lahore</p>
         </div>
 
