@@ -55,20 +55,20 @@ const ContactSection = () => {
               <svg className="w-5 h-5 mr-2 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
-              <span>123 Innovation Street, Tech City</span>
+              <span>643 L Block, Sabzazar, Lahore</span>
             </p>
             <p className="flex items-center">
               <svg className="w-5 h-5 mr-2 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.15a1 1 0 01.99.83l.74 4.43a1 1 0 01-.54 1.06l-1.55.77a11.03 11.03 0 006.1 6.1l.77-1.55a1 1 0 011.06-.54l4.43.74a1 1 0 01.83.99V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <span>+1 (234) 567-8900</span>
+              <span>+92(347) 3706598</span>
             </p>
             <p className="flex items-center">
               <svg className="w-5 h-5 mr-2 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
-              <span>contact@yourbusiness.com</span>
+              <span>Softsincs@gmail.com</span>
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ const ContactSection = () => {
               type="text"
               value={formData.name}
               onChange={handleChange}
-              placeholder="John Doe"
+              placeholder="Muhammad Ahmad"
               className="block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:ring-2 focus:ring-violet-500 focus:outline-none"
             />
             {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
@@ -95,7 +95,7 @@ const ContactSection = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="john@example.com"
+              placeholder="Muhammad@example.com"
               className="block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:ring-2 focus:ring-violet-500 focus:outline-none"
             />
             {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
