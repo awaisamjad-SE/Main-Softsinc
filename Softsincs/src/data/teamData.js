@@ -57,32 +57,32 @@ const teamData = [
     // No category → not part of development team
   },
   {
-    id: "alexander-thomas",
-    name: "Alexander Thomas",
+    id: "Bin-Yameen",
+    name: "Dr Bin Yameen",
     role: "Chief Executive Officer (CEO)",
     image: "/images/ceo.jpg",
     bio: "Leads the company's vision and long-term strategic direction.",
     skills: ["Leadership", "Business Strategy", "Investor Relations"]
   },
   {
-    id: "natalie-roberts",
-    name: "Natalie Roberts",
+    id: "Muhammad-Ahmad",
+    name: "Muhammad Ahmad",
     role: "Chief Technology Officer (CTO)",
     image: "/images/cto.jpg",
     bio: "Oversees all technology initiatives and product architecture.",
     skills: ["System Design", "Tech Strategy", "Cloud Infrastructure"]
   },
   {
-    id: "brian-cooper",
-    name: "Brian Cooper",
+    id: "Ali-Khan",
+    name: "Ali ",
     role: "Chief Operating Officer (COO)",
     image: "/images/coo.jpg",
     bio: "Manages daily operations and cross-team coordination.",
     skills: ["Operations", "Management", "Process Optimization"]
   },
   {
-    id: "lucy-taylor",
-    name: "Lucy Taylor",
+    id: "Muhammad-Abbas",
+    name: "Muhammad Abbas",
     role: "Chief Marketing Officer (CMO)",
     image: "/images/cmo.jpg",
     bio: "Drives marketing strategy, branding, and customer engagement.",

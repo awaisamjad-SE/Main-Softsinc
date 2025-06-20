@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import jobsData from "../data/jobsData";
 import Hero2 from "../Components/layout/Hero2";
-import jobImage from "../assets/Images/background.jpg"
+import jobImage from "../assets/Images/background.jpg";
 
 const JobDetail = () => {
   const { slug } = useParams();
@@ -19,7 +19,7 @@ const JobDetail = () => {
           description="The position you're looking for may have been filled or doesn't exist."
           backgroundImage={jobImage}
           buttonText="Back to Careers"
-          buttonLink="/carrers"
+          buttonLink="/careers"
         />
         <div className="text-center py-20 text-red-600 text-xl font-semibold">
           No job was found with the given URL.
@@ -72,16 +72,31 @@ const JobDetail = () => {
           </>
         )}
 
-        <div className="mt-10 p-6 bg-indigo-50 rounded-lg border border-indigo-200">
-          <p className="text-lg text-gray-800 mb-2">
-            Interested candidates can send their resume to:
-          </p>
-          <a
-            href="mailto:softsincs@gmail.com"
-            className="text-indigo-600 font-semibold hover:underline"
-          >
-            softsincs@gmail.com
-          </a>
+        {/* Conditional Google Form iframe or email contact */}
+        <div className="mt-10">
+          {job.applyLink ? (
+            <div className="relative" style={{paddingTop: '75%', height: 0}}>
+              <iframe
+                src={job.applyLink}
+                title="Job Application Form"
+                className="absolute top-0 left-0 w-full h-full border rounded-md"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ) : (
+            <div className="p-6 bg-indigo-50 rounded-lg border border-indigo-200">
+              <p className="text-lg text-gray-800 mb-2">
+                Interested candidates can send their resume to:
+              </p>
+              <a
+                href="mailto:softsincs@gmail.com"
+                className="text-indigo-600 font-semibold hover:underline"
+              >
+                softsincs@gmail.com
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </>
