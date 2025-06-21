@@ -20,7 +20,7 @@ const features = [
   {
     title: "Extensive Expertise & Worldwide Presence",
     description:
-      "50+ projects completed across 13 countries, delivering global solutions with a local touch.",
+      "30+ projects completed across 13 countries, delivering global solutions with a local touch.",
   },
   {
     title: "Proven Case Studies",

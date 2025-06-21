@@ -4,28 +4,29 @@ import Logo from "../Navbar/Logo"; // Adjust path if needed
 const Footer = () => {
   return (
     <footer className="bg-[#e4e7ff] text-[#2e35d7] py-10 border-t border-[#cdd1f9]">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 gap-10 px-4 mx-auto max-w-7xl md:grid-cols-3">
 
         {/* Brand Section */}
         <div className="flex flex-col items-start">
           <Logo />
-          <h2 className="text-2xl font-bold mt-2">Softsinc Technologies</h2>
-          <p className="text-sm mt-2 max-w-xs">
+          <h2 className="mt-2 text-2xl font-bold">Softsinc Technologies</h2>
+          <p className="max-w-xs mt-2 text-sm">
             Building innovative tech solutions that lead the industry and deliver exceptional value.
           </p>
         </div>
 
         {/* Contact Info */}
         <div className="flex flex-col space-y-2 text-sm">
-          <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
+          <h3 className="mb-2 text-xl font-semibold">Contact Us</h3>
           <p>Email: <a href="mailto:softsincs@gmail.com" className="underline">softsincs@gmail.com</a></p>
           <p>Phone: <a href="tel:+923473706598" className="underline">+92 347 3706598</a></p>
-          <p>Headquarters: 643 L Block, Sabzazar, Lahore</p>
+          <p>Headquarter: 643 L Block, Sabzazar, Lahore</p>
+          <p>Head Office: Ghirnatah, Dammam, Saudi Arabia </p>
         </div>
 
         {/* Social Icons */}
         <div className="flex flex-col items-start">
-          <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
+          <h3 className="mb-2 text-xl font-semibold">Follow Us</h3>
           <div className="flex space-x-4">
             <a href="#" className="text-[#2e35d7] hover:text-[#f4379d] transition">
               <svg fill="currentColor" className="w-6 h-6" viewBox="0 0 24 24">
