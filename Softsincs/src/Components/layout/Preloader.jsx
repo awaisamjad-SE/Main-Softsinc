@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Preloader = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      // Add a 3-second delay after load before hiding the preloader
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => window.removeEventListener('load', handleLoad);
+  }, []);
+
+  if (!isLoading) return null;
+
   return (
     <div
       className="
