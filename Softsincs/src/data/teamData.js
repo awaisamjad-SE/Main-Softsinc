@@ -58,8 +58,8 @@ const teamData = [
   },
   {
     id: "Bin-Yameen",
-    name: "Dr Bin Yameen",
-    role: "Chief Executive Officer (CEO)",
+    name: "Dr Mubashir ",
+    role: "Advisor And Mentor",
     image: "/images/ceo.jpg",
     bio: "Leads the company's vision and long-term strategic direction.",
     skills: ["Leadership", "Business Strategy", "Investor Relations"]
