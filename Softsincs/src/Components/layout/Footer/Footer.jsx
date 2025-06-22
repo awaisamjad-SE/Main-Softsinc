@@ -19,8 +19,8 @@ const Footer = () => {
         <div className="flex flex-col space-y-2 text-sm">
           <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
           <p>Email: <a href="mailto:softsincs@gmail.com" className="underline">softsincs@gmail.com</a></p>
-          <p>Phone: <a href="tel:+923473706598" className="underline">+92 347 3706598</a></p>
-          <p>Headquarters: 643 L Block, Sabzazar, Lahore</p>
+          <p>Phone: <a href="tel:+923473706598" className="underline">+966 1 5225 5365</a></p>
+          <p>Headquarters: Ghirnatah, Dammam ,Saudia Arabia</p>
         </div>
 
         {/* Social Icons */}
