@@ -4,14 +4,14 @@ const testimonials = [
     {
     name: "Priya Kumar",
     position: "Frontend Developer, DevSolutions (India)",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    image: "",
     message:
       "Absolutely love how easy and fast it is to implement new features. The documentation is top-notch too!",
   },
   {
     name: "Hamza Tariq",
     position: "Founder, Digital Raabta (Lahore)",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    image: "https://randomuser.",
     message:
       "Inka kaam buhat zabardast hai! Time pe delivery aur support bhi full. Highly recommended from my side.",
   },
@@ -46,7 +46,7 @@ const testimonials = [
   {
     name: "Areeba Shahid",
     position: "Content Strategist, UrduPoint (Islamabad)",
-    image: "https://randomuser.me/api/portraits/women/55.jpg",
+    image: "https://randomuser.me/",
     message:
       "Har cheez perfect thi – design, speed aur functionality. Bohat achi experience rahi SoftSincs ke sath!",
   },
