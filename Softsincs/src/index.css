@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+video {
+  image-rendering: auto; /* Prevents pixelation */
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0); /* Helps with GPU acceleration */
+  will-change: transform;
+}

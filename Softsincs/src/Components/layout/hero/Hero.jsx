@@ -1,19 +1,20 @@
 import React from 'react';
 import HeroButtons from './HeroButtons';
-import bgVideo from '../../../assets/Images/video.mp4';
-
 const Hero = () => {
   return (
     <section className="pt-[140px] relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <video
-        className="absolute top-0 left-0 z-0 object-cover w-full h-full"
-        src="/video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+  className="absolute top-0 left-0 w-full h-full object-cover object-center pointer-events-none"
+  src="https://learn.edumeup.com/wp-content/uploads/2025/06/video.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+/>
+
+
 
       {/* Transparent Overlay Content */}
       <div className="relative z-10 flex items-center justify-center h-full bg-transparent">
