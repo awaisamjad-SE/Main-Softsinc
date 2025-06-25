@@ -5,10 +5,10 @@ const Preloader = () => {
 
   useEffect(() => {
     const handleLoad = () => {
-      // Add a 3-second delay after load before hiding the preloader
+      // Delay to allow animations or additional effects
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000); // Adjust delay as needed
     };
 
     if (document.readyState === 'complete') {
@@ -24,18 +24,14 @@ const Preloader = () => {
 
   return (
     <div
-      className="
-        fixed inset-0 z-[9999] flex items-center justify-center
-        bg-white
-      "
-      aria-label="Loading"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
       role="alert"
       aria-busy="true"
     >
       <div className="flex space-x-3">
-        <span className="w-5 h-5 bg-violet-600 rounded-full animate-pulse"></span>
-        <span className="w-5 h-5 bg-violet-600 rounded-full animate-pulse animation-delay-150"></span>
-        <span className="w-5 h-5 bg-violet-600 rounded-full animate-pulse animation-delay-300"></span>
+        <span className="w-5 h-5 bg-violet-600 rounded-full animate-bounce"></span>
+        <span className="w-5 h-5 bg-violet-600 rounded-full animate-bounce delay-150"></span>
+        <span className="w-5 h-5 bg-violet-600 rounded-full animate-bounce delay-300"></span>
       </div>
     </div>
   );

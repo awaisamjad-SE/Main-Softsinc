@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroButtons from './HeroButtons';
-import bgVideo from '../../../assets/Images/hero2.mp4';
+import bgVideo from '../../../assets/Images/video.mp4';
 
 const Hero = () => {
   return (
