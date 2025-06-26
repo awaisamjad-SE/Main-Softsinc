@@ -1,12 +1,13 @@
 import React from 'react';
 import HeroButtons from './HeroButtons';
+import bg1 from '../../../assets/Images/herovideo.mp4'
 const Hero = () => {
   return (
     <section className="pt-[140px] relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <video
   className="absolute top-0 left-0 w-full h-full object-cover object-center pointer-events-none"
-  src="https://learn.edumeup.com/wp-content/uploads/2025/06/video.mp4"
+  src={bg1}
   autoPlay
   loop
   muted
