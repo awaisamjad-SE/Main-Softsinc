@@ -11,7 +11,7 @@ import TechStackSection from './Components/layout/hero/TechStackSection';
 import KeyHighlights from './Components/layout/hero/KeyHighlights';
 import Testimonials from './Components/layout/hero/Testimonials';
 import ContactSection from './Components/layout/hero/ContactSection';
-
+import './Components/Dashboard'
 // Standalone Pages
 import NotFound from './Pages/NotFound';
 import About from './Pages/About';
@@ -31,6 +31,7 @@ import InternshipPage from "./Pages/InternshipPage";
 import InternshipDetail from "./Pages/InternshipDetail";
 import StartupPage from './Pages/Startup';
 import EnterprisesPage from './Pages/Enterprises';
+import Dashboard from './Components/Dashboard';
 // HomePage composed of multiple sections
 const HomePage = () => (
   <>
@@ -42,6 +43,7 @@ const HomePage = () => (
     <KeyHighlights />
     <Testimonials />
     <ContactSection />
+    <Dashboard />
   </>
 );
 
@@ -67,6 +69,9 @@ const AppRoutes = () => (
     <Route path="/internship/:slug" element={<InternshipDetail />} />
     <Route path="/startups" element={<StartupPage />} />
     <Route path="/enterprises" element={<EnterprisesPage />} />
+    {/* Dashboard Route */}
+
+    
     <Route path="*" element={<NotFound />} />
     
   </Routes>
