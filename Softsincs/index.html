@@ -22,83 +22,54 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-<script>
-(function () {
-  console.log("✅ Tracking initialized...");
+window.addEventListener("beforeunload", () => {
+  const timeSpent = Math.floor((Date.now() - startTime) / 1000);
 
-  const WEB_ID = "softsincs-web-analytics";
-  const startTime = Date.now();
-  let clickCount = 0;
+  const payload = {
+    web_id: WEB_ID,
+    device_id: deviceId,
+    pageUrl: window.location.href,
+    referrer: document.referrer,
+    screenResolution: `${window.screen.width}x${window.screen.height}`,
+    deviceType: /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop",
+    language: navigator.language,
+    browser: navigator.userAgent,
+    utmParams: getUTMParams(),
+    timeOnPage: timeSpent,
+    clicks: clickCount,
+    locationInfo: {},
+  };
 
-  function getDeviceId() {
-    let id = localStorage.getItem("analytics_device_id");
-    if (!id) {
-      id = "device-" + Math.random().toString(36).substr(2, 10);
-      localStorage.setItem("analytics_device_id", id);
-    }
-    return id;
-  }
+  console.log("🔔 Tracking payload prepared:", payload);
 
-  const deviceId = getDeviceId();
+  const jsonData = JSON.stringify(payload);
+  const blob = new Blob([jsonData], { type: "application/json" });
 
-  // Count clicks on the page
-  document.addEventListener("click", () => {
-    clickCount++;
-  });
+  const beaconSent = navigator.sendBeacon(
+    "https://octopus-app-qevgj.ondigitalocean.app/api/track/",
+    blob
+  );
 
-  // Helper to get UTM params from URL
-  function getUTMParams() {
-    const params = new URLSearchParams(window.location.search);
-    return {
-      utm_source: params.get("utm_source") || "",
-      utm_medium: params.get("utm_medium") || "",
-      utm_campaign: params.get("utm_campaign") || "",
-    };
-  }
+  if (!beaconSent) {
+    console.log("⚠️ sendBeacon failed, falling back to fetch()");
 
-  window.addEventListener("beforeunload", () => {
-    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
-
-    const payload = {
-      web_id: WEB_ID,
-      device_id: deviceId,
-      pageUrl: window.location.href,
-      referrer: document.referrer,
-      screenResolution: `${window.screen.width}x${window.screen.height}`,
-      deviceType: /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop",
-      language: navigator.language,
-      browser: navigator.userAgent,
-      utmParams: getUTMParams(),
-      timeOnPage: timeSpent,
-      clicks: clickCount,
-      locationInfo: {}, // Optional: add geo info if you want via IP API
-    };
-
-    const jsonData = JSON.stringify(payload);
-    const blob = new Blob([jsonData], { type: "application/json" });
-
-    // Try sendBeacon first
-    const beaconSent = navigator.sendBeacon(
-      "https://octopus-app-qevgj.ondigitalocean.app/api/track/",
-      blob
-    );
-
-    if (!beaconSent) {
-      // Fallback to fetch for browsers where sendBeacon fails
-      fetch("https://octopus-app-qevgj.ondigitalocean.app/api/track/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: jsonData,
-        keepalive: true, // allow fetch during unload
-      }).catch((err) => {
-        console.warn("Tracking failed:", err);
+    fetch("https://octopus-app-qevgj.ondigitalocean.app/api/track/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: jsonData,
+      keepalive: true,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("✅ Tracking fetch response:", data);
+      })
+      .catch((err) => {
+        console.warn("❌ Tracking fetch error:", err);
       });
-    }
-  });
-
-  console.log("✅ Tracking script loaded.");
-})();
-</script>
+  } else {
+    console.log("✅ sendBeacon sent successfully");
+  }
+});
 
     
   </body>
