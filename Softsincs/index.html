@@ -22,12 +22,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <script>
+<script>
 (function () {
   console.log("✅ Tracking initialized...");
 
-  const WEB_ID = "softsincs-web-analytics"; 
+  const WEB_ID = "softsincs-web-analytics";
   const startTime = Date.now();
   let clickCount = 0;
 
@@ -42,23 +41,23 @@
 
   const deviceId = getDeviceId();
 
+  // Count clicks on the page
   document.addEventListener("click", () => {
     clickCount++;
   });
 
-  window.addEventListener("beforeunload", async () => {
-    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+  // Helper to get UTM params from URL
+  function getUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || "",
+    };
+  }
 
-    // Get IP info (Geo, ISP, etc.)
-    let locationInfo = {};
-    try {
-      const res = await fetch("https://ipinfo.io/json?token=2f3b36e0efaa01"); // Replace with your token
-      if (res.ok) {
-        locationInfo = await res.json();
-      }
-    } catch (e) {
-      console.warn("Could not fetch location info:", e);
-    }
+  window.addEventListener("beforeunload", () => {
+    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
 
     const payload = {
       web_id: WEB_ID,
@@ -69,23 +68,35 @@
       deviceType: /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop",
       language: navigator.language,
       browser: navigator.userAgent,
-      utmParams: {}, // You can enhance this
+      utmParams: getUTMParams(),
       timeOnPage: timeSpent,
       clicks: clickCount,
-      locationInfo: locationInfo,
+      locationInfo: {}, // Optional: add geo info if you want via IP API
     };
 
-    const blob = new Blob([JSON.stringify(payload)], {
-      type: "application/json",
-    });
+    const jsonData = JSON.stringify(payload);
+    const blob = new Blob([jsonData], { type: "application/json" });
 
-    navigator.sendBeacon(
+    // Try sendBeacon first
+    const beaconSent = navigator.sendBeacon(
       "https://octopus-app-qevgj.ondigitalocean.app/api/track/",
       blob
     );
+
+    if (!beaconSent) {
+      // Fallback to fetch for browsers where sendBeacon fails
+      fetch("https://octopus-app-qevgj.ondigitalocean.app/api/track/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: jsonData,
+        keepalive: true, // allow fetch during unload
+      }).catch((err) => {
+        console.warn("Tracking failed:", err);
+      });
+    }
   });
 
-  console.log("✅ Tracking script loaded successfully.");
+  console.log("✅ Tracking script loaded.");
 })();
 </script>
 
