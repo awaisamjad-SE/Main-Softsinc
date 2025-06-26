@@ -23,112 +23,58 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
-function sendTrackingData() {
-  const data = {
-    timestamp: new Date().toISOString(),
-    pageUrl: window.location.href,
-    referrer: document.referrer || '',
-    screenResolution: `${window.screen.width}x${window.screen.height}`,
-    deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
-    language: navigator.language,
-    browser: navigator.userAgent,
-    utmParams: {
-      utm_source: getParameterByName('utm_source'),
-      utm_medium: getParameterByName('utm_medium'),
-      utm_campaign: getParameterByName('utm_campaign')
-    },
-    timeOnPage: 0,   // You can update this later
-    scrollDepth: ''
-  };
+  
+(function () {
+  console.log("Tracking initialized...");
 
-  fetch('https://octopus-app-qevgj.ondigitalocean.app/api/track/', {  // Replace with your backend URL
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  }).then(res => res.json())
-    .then(response => console.log('Tracking saved:', response))
-    .catch(err => console.error('Tracking error:', err));
-}
-
-// Helper to get URL query parameters (for UTM)
-function getParameterByName(name) {
-  const url = window.location.href;
-  name = name.replace(/[\\[\\]]/g, '\\$&');
-  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-  const results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-// Send tracking when page loads
-window.addEventListener('load', sendTrackingData);
-
-</script>
-<script>
-  let timeSpent = 0;
-  let scrollPercent = 0;
+  const WEB_ID = "softsincs-web-analytics";
+  const startTime = Date.now();
   let clickCount = 0;
 
-  const data = {
-    timestamp: new Date().toISOString(),
-    pageUrl: window.location.href,
-    referrer: document.referrer || '',
-    screenResolution: `${window.screen.width}x${window.screen.height}`,
-    deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
-    language: navigator.language,
-    browser: navigator.userAgent,
-    utmParams: {
-      utm_source: getParameterByName('utm_source'),
-      utm_medium: getParameterByName('utm_medium'),
-      utm_campaign: getParameterByName('utm_campaign')
-    },
-    timeOnPage: 0,
-    scrollDepth: '',
-    clicks: 0
-  };
-
-  // Helper: Get UTM param from URL
-  function getParameterByName(name) {
-    const url = window.location.href;
-    name = name.replace(/[\\[\\]]/g, '\\$&');
-    const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-    const results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  function getDeviceId() {
+    let id = localStorage.getItem("analytics_device_id");
+    if (!id) {
+      id = "device-" + Math.random().toString(36).substr(2, 10);
+      localStorage.setItem("analytics_device_id", id);
+    }
+    return id;
   }
 
-  // Count time and scroll depth
-  setInterval(() => {
-    timeSpent += 1;
+  const deviceId = getDeviceId();
 
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    scrollPercent = docHeight ? Math.round((scrollTop / docHeight) * 100) : 0;
-  }, 1000);
+  document.addEventListener("click", () => clickCount++);
 
-  // Count total clicks
-  window.addEventListener('click', () => {
-    clickCount += 1;
+  window.addEventListener("beforeunload", () => {
+    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+
+    const payload = {
+      web_id: WEB_ID,
+      device_id: deviceId,
+      pageUrl: window.location.href,
+      referrer: document.referrer,
+      screenResolution: `${window.screen.width}x${window.screen.height}`,
+      deviceType: /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop",
+      language: navigator.language,
+      browser: navigator.userAgent,
+      utmParams: {},
+      timeOnPage: timeSpent,
+      clicks: clickCount,
+    };
+
+    console.log("Sending tracking data...", payload);
+
+    fetch("https://octopus-app-qevgj.ondigitalocean.app/api/track/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      keepalive: true // keep it alive during page unload
+    })
+    .then(res => res.json())
+    .then(data => console.log("Tracking saved:", data))
+    .catch(err => console.error("Tracking failed:", err));
   });
-
-  // Send data when page unloads (best timing)
-  window.addEventListener('beforeunload', () => {
-    data.timeOnPage = timeSpent;
-    data.scrollDepth = scrollPercent + '%';
-    data.clicks = clickCount;
-
-    const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
-    navigator.sendBeacon('https://octopus-app-qevgj.ondigitalocean.app/api/track/', blob);
-  });
-
-  // Optional: Log tracking on page load
-  window.addEventListener('load', () => {
-    console.log("Tracking initialized...");
-  });
+})();
+  console.log("Tracking script loaded successfully.");
 </script>
 
   </body>
