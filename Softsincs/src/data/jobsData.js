@@ -22,7 +22,7 @@ const jobsData = [
       "Strong creative and analytical skills",
       "Team-oriented and proactive collaboration approach"
     ],
-    applyLink: "Send your portfolio and experience to softsinc@gmail.com"
+    applyLink: ""
   }
 ];
 
