@@ -31,7 +31,6 @@ import InternshipPage from "./Pages/InternshipPage";
 import InternshipDetail from "./Pages/InternshipDetail";
 import StartupPage from './Pages/Startup';
 import EnterprisesPage from './Pages/Enterprises';
-import Dashboard from './Components/Dashboard';
 // HomePage composed of multiple sections
 const HomePage = () => (
   <>
@@ -43,7 +42,7 @@ const HomePage = () => (
     <KeyHighlights />
     <Testimonials />
     <ContactSection />
-    <Dashboard />
+    
   </>
 );
 
