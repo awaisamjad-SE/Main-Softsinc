@@ -1,19 +1,21 @@
 import React from 'react';
 import HeroButtons from './HeroButtons';
-import bg1 from '../../../assets/Images/herovideo.mp4'
 const Hero = () => {
   return (
-    <section className="pt-[140px] relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <video
-  className="absolute top-0 left-0 w-full h-full object-cover object-center pointer-events-none"
-  src={bg1}
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-/>
+   <section className="pt-[140px] relative h-screen w-full overflow-hidden">
+  {/* Image Background */}
+  <img
+    src="/Services-Images/picture.jpg"
+    alt="Service"
+    className="absolute top-0 left-0 object-cover w-full h-full"
+  />
+
+  {/* Optional content on top */}
+  <div className="relative z-10 text-center text-white">
+    <h1 className="text-5xl font-bold">Welcome to Softsincs</h1>
+    <p className="mt-4 text-lg">Your digital innovation partner.</p>
+  </div>
+
 
 
 
