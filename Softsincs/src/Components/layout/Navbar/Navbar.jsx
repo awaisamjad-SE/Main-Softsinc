@@ -84,7 +84,7 @@ const Navbar = () => {
           : 'bg-transparent text-white'
       }`}
     >
-      <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl sm:px-6">
+      <div className="flex items-center justify-between px-4 mx-0.5 auto py- max-w-7xl sm:px-6">
         <Link to="/" className="flex items-center">
           <Logo />
         </Link>
