@@ -3,11 +3,13 @@ import Navbar from './Components/layout/Navbar/Navbar';
 import Footer from './Components/layout/Footer/Footer';
 import AppRoutes from './routes';
 import ScrollToTop from './Components/Common/ScrollToTop';
-import RouteChangePreloader from '../src/routes/RouteChangePreloader'; 
-function App() {
+import RouteChangePreloader from '../src/routes/RouteChangePreloader';
+import ParticleBackground from './Components/Common/ParticleBackground';
 
+function App() {
   return (
     <>
+      <ParticleBackground />
       <RouteChangePreloader />
       <Navbar />
       <ScrollToTop />

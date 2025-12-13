@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../Components/Common/SEO';
 import Hero2 from "../Components/layout/Hero2";
 import bgEnterprises from "../assets/Images/background.jpg"; // ✅ Make sure this image exists
 import Services from "../Components/layout/hero/Services"; // Optional: reuse with filtered enterprise services
@@ -8,6 +9,12 @@ import ContactSection from "../Components/layout/hero/ContactSection";
 const EnterprisesPage = () => {
   return (
     <div>
+      <SEO 
+        title="Enterprise Solutions - Softsincs | Scalable Digital Transformation"
+        description="Empower your enterprise with Softsincs' scalable software solutions. We provide cloud infrastructure, system integration, AI automation, and enterprise-grade security."
+        keywords="enterprise software, digital transformation, cloud solutions, system integration, enterprise security, business automation, scalable solutions"
+        url="https://softsincs.com/enterprises"
+      />
       {/* Hero Banner */}
       <Hero2
         smallTitle="Enterprise Solutions"

@@ -1,6 +1,7 @@
 // src/pages/TeamPage.jsx
 
 import React from 'react';
+import SEO from '../Components/Common/SEO';
 import { Link } from 'react-router-dom';
 import teamData from '../data/teamData';
 import Hero2 from "../Components/layout/Hero2"
@@ -10,6 +11,12 @@ import DevelopmentTeam from '../Components/layout/DevelopmentTeam';
 const TeamPage = () => {
   return (
 <>
+      <SEO 
+        title="Our Team - Softsincs | Meet Our Expert Development Team"
+        description="Meet the talented team behind Softsincs. Our expert developers, designers, and technology leaders are passionate about creating innovative software solutions."
+        keywords="software development team, expert developers, tech team, development professionals, software engineers"
+        url="https://softsincs.com/team"
+      />
       <Hero2
         smallTitle="Team"
         title="Let's Connect and Collaborate"

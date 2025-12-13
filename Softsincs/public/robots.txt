@@ -1,0 +1,24 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://softsincs.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow certain paths if needed (examples below, uncomment if needed)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /api/
+
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

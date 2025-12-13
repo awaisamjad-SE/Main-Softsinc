@@ -1,9 +1,197 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-gradient-purple text-white px-6 py-3 rounded-lg font-semibold 
+           hover:shadow-glow transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-blue text-white px-6 py-3 rounded-lg font-semibold 
+           hover:shadow-glow transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold 
+           hover:bg-primary-600 hover:text-white transition-all duration-300;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-glow transition-all duration-300 
+           transform hover:-translate-y-1;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg shadow-lg p-6 
+           hover:shadow-glow transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .section-padding-small {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Headings */
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight;
+  }
+  
+  .heading-3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900;
+  }
+  
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-purple;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-blue;
+  }
+  
+  /* Loading Skeleton */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20;
+  }
+  
+  /* Responsive Text */
+  .responsive-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  /* Hide Scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Custom Gradient Background */
+  .bg-gradient-mesh {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+/* Video Optimization */
 video {
-  image-rendering: auto; /* Prevents pixelation */
+  image-rendering: auto;
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0); /* Helps with GPU acceleration */
+  transform: translate3d(0, 0, 0);
   will-change: transform;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Wave Animation */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-wave {
+  animation: wave 10s linear infinite;
+}
+
+/* Gradient Shift Animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 200% auto;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Dark Mode Support (Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles here if needed */
 }

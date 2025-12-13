@@ -1,5 +1,6 @@
 // src/pages/InternshipPage.jsx
 import React from "react";
+import SEO from '../Components/Common/SEO';
 import Hero2 from "../Components/layout/Hero2";
 import InternshipSection from "../Components/layout/InternshipSection";
 import Faq from "../Components/layout/hero/Faq";
@@ -9,6 +10,12 @@ import bgInternship from "../assets/Images/background.jpg"; // your own backgrou
 const InternshipPage = () => {
   return (
     <>
+      <SEO 
+        title="Internship Programs - Softsincs | Start Your Tech Career"
+        description="Launch your career in software development with Softsincs internship programs. Gain hands-on experience, work on real projects, and learn from industry experts."
+        keywords="software internship, tech internship, developer training, intern positions, career start, software development internship"
+        url="https://softsincs.com/internships"
+      />
       <Hero2
         smallTitle="Internships"
         title="Launch Your Career with Us"

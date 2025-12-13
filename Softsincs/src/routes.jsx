@@ -31,9 +31,20 @@ import InternshipPage from "./Pages/InternshipPage";
 import InternshipDetail from "./Pages/InternshipDetail";
 import StartupPage from './Pages/Startup';
 import EnterprisesPage from './Pages/Enterprises';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import TermsOfService from './Pages/TermsOfService';
+import Sitemap from './Pages/Sitemap';
+import SEO from './Components/Common/SEO';
+
 // HomePage composed of multiple sections
 const HomePage = () => (
   <>
+    <SEO 
+      title="Softsincs - Leading Software Development Company | Custom Solutions & Innovation"
+      description="Softsincs is a premier software development company specializing in custom web applications, mobile apps, AI solutions, and enterprise software. Transform your business with cutting-edge technology."
+      keywords="software development, web development, mobile app development, AI solutions, custom software, enterprise solutions, cloud services, digital transformation, technology consulting"
+      url="https://softsincs.com"
+    />
     <Hero />
     <Services />
     <WhyChooseUs />
@@ -42,7 +53,6 @@ const HomePage = () => (
     <KeyHighlights />
     <Testimonials />
     <ContactSection />
-    
   </>
 );
 
@@ -68,11 +78,10 @@ const AppRoutes = () => (
     <Route path="/internship/:slug" element={<InternshipDetail />} />
     <Route path="/startups" element={<StartupPage />} />
     <Route path="/enterprises" element={<EnterprisesPage />} />
-    {/* Dashboard Route */}
-
-    
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    <Route path="/terms-of-service" element={<TermsOfService />} />
+    <Route path="/sitemap" element={<Sitemap />} />
     <Route path="*" element={<NotFound />} />
-    
   </Routes>
 );
 

@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../Components/Common/SEO';
 import Hero2 from "../Components/layout/Hero2";
 import bgStartup from "../assets/Images/background.jpg"; // ✅ Use your startup-related image
 import Services from "../Components/layout/hero/Services"; // Reuse for startup-focused services if needed
@@ -10,6 +11,12 @@ import ContactSection from "../Components/layout/hero/ContactSection";
 const StartupPage = () => {
   return (
     <div>
+      <SEO 
+        title="Startup Solutions - Softsincs | MVP Development & Growth Strategy"
+        description="Transform your startup idea into reality with Softsincs. We provide MVP development, product strategy, and scalable solutions to help startups succeed and grow."
+        keywords="startup software development, MVP development, startup solutions, product development, startup technology, lean startup, agile development"
+        url="https://softsincs.com/startups"
+      />
       {/* Hero Banner */}
       <Hero2
         smallTitle="Startup Launch & Growth"

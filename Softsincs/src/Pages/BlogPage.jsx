@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../Components/Common/SEO';
 import blogData from "../data/blogData";
 import { Link } from "react-router-dom";
 import Hero2 from "../Components/layout/Hero2";
@@ -14,6 +15,13 @@ const BlogPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Blog - Softsincs | Tech Insights, Tutorials & Industry Updates"
+        description="Read the latest articles from Softsincs covering software development, AI, cloud computing, best practices, and technology trends. Expert insights to help your business grow."
+        keywords="software development blog, tech articles, programming tutorials, AI insights, cloud computing, technology trends, development best practices"
+        url="https://softsincs.com/blog"
+        type="blog"
+      />
       <Hero2
         smallTitle="Blogs"
         title="Latest Insights & Stories"

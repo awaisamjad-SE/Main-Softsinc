@@ -1,10 +1,17 @@
 import React from "react";
+import SEO from '../Components/Common/SEO';
 import Hero2 from "../Components/layout/Hero2";
 import bgContact from "../assets/Images/background.jpg"; // Use your own contact background image
 import ContactSection from "../Components/layout/hero/ContactSection";
 const Contact = () => {
   return (
     <>
+      <SEO 
+        title="Contact Us - Softsincs | Let's Build Something Amazing Together"
+        description="Get in touch with Softsincs for your software development needs. Our expert team is ready to help you transform your ideas into reality. Free consultation available."
+        keywords="contact softsincs, software development inquiry, free consultation, get quote, hire developers, project consultation"
+        url="https://softsincs.com/contact"
+      />
       <Hero2
         smallTitle="Contact Us"
         title="Let's Connect and Collaborate"

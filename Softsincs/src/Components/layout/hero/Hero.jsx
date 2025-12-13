@@ -1,28 +1,141 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroButtons from "./HeroButtons";
-const Hero = () => {
-  return (
-    <section className="pt-[140px] relative h-screen w-full overflow-hidden">
-      {/* Image Background */}
-      <img
-        src="/Services-Images/picture.jpg"
-        alt="Service"
-        className="absolute top-0 left-0 object-cover w-full h-full"
-      />
 
-      {/* Transparent Overlay Content */}
-      <div className="relative z-10 flex items-center justify-center h-full bg-transparent">
-        <div className="max-w-3xl p-4 mx-auto text-center text-white md:p-8">
-          <h1 className="mb-4 text-4xl font-bold md:text-6xl drop-shadow-lg">
-            Empowering Your Digital Future
+const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentWord, setCurrentWord] = useState(0);
+  
+  const techWords = [
+    "AI & Machine Learning",
+    "Cloud Computing",
+    "Blockchain",
+    "Mobile Apps",
+    "Web Development",
+    "DevOps",
+    "Cybersecurity",
+    "IoT Solutions",
+    "Data Analytics",
+    "API Development",
+    "React & Angular",
+    "Node.js",
+    "Python & Django",
+    "Docker & Kubernetes",
+    "AWS & Azure",
+    "MongoDB & SQL",
+    "GraphQL & REST",
+    "TypeScript",
+    "Microservices",
+    "Agile & Scrum"
+  ];
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Animate tech words - faster animation
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % techWords.length);
+    }, 1200);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="pt-[80px] relative min-h-screen w-full overflow-hidden bg-white">
+      {/* Animated Tech Words Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 flex flex-wrap items-center justify-around gap-8 p-8">
+          {techWords.map((word, index) => {
+            const isActive = index === currentWord;
+            const isPrevious = index === (currentWord - 1 + techWords.length) % techWords.length;
+            const isNext = index === (currentWord + 1) % techWords.length;
+            
+            let opacity = 'opacity-[0.03]';
+            let scale = 'scale-100';
+            
+            if (isActive) {
+              opacity = 'opacity-[0.15]';
+              scale = 'scale-110';
+            } else if (isPrevious || isNext) {
+              opacity = 'opacity-[0.08]';
+              scale = 'scale-105';
+            }
+            
+            return (
+              <div
+                key={index}
+                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-600 transition-all duration-700 ${opacity} ${scale}`}
+                style={{
+                  position: 'absolute',
+                  top: `${(index * 10) % 80 + 10}%`,
+                  left: `${(index * 15) % 80 + 10}%`,
+                  transform: `rotate(${(index % 2 === 0 ? -15 : 15)}deg)`,
+                }}
+              >
+                {word}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Gradient Overlay for Depth */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-white/50 to-white"></div>
+
+      {/* Main Content */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-12">
+        <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          
+        
+         
+
+          {/* Main Heading */}
+          <h1 className="mb-4 text-2xl font-bold leading-tight text-gray-900 sm:mb-6 sm:text-4xl md:text-5xl lg:text-5xl animate-fade-in-up">
+            Empowering Your
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600">
+              Digital Future
+            </span>
           </h1>
-          <p className="mb-6 text-lg md:text-xl drop-shadow">
-            Custom software solutions that drive innovation and growth.
+
+          {/* Description */}
+          <p className="max-w-2xl px-4 mx-auto mt-2 mb-6 text-sm leading-relaxed text-gray-600 sm:mb-8 sm:text-base md:text-lg animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Transform your vision into reality with cutting-edge software solutions. 
+            We build innovative, scalable, and user-centric applications.
           </p>
 
+          {/* Stats Bar */}
+          <div className="grid justify-center grid-cols-2 gap-4 px-4 mb-6 sm:mb-8 sm:flex sm:flex-wrap sm:gap-6 md:gap-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-primary-50 to-secondary-50 sm:p-4 rounded-xl">
+              <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-primary-600">250+</div>
+              <div className="text-xs text-gray-600 sm:text-sm">Projects</div>
+            </div>
+            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-secondary-50 to-accent-50 sm:p-4 rounded-xl">
+              <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-secondary-600">100+</div>
+              <div className="text-xs text-gray-600 sm:text-sm">Clients</div>
+            </div>
+            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-accent-50 to-primary-50 sm:p-4 rounded-xl">
+              <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-accent-600">50+</div>
+              <div className="text-xs text-gray-600 sm:text-sm">Team</div>
+            </div>
+            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-primary-50 to-accent-50 sm:p-4 rounded-xl">
+              <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-primary-600">5+</div>
+              <div className="text-xs text-gray-600 sm:text-sm">Years</div>
+            </div>
+          </div>
+
           {/* Buttons */}
-          <HeroButtons />
+          <div className="mb-6 animate-fade-in-up sm:mb-8" style={{ animationDelay: '0.6s' }}>
+            <HeroButtons />
+          </div>
+
+       
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </section>
   );
