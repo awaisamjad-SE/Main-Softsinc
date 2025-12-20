@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import jobsData from "../data/jobsData";
-import Hero2 from "../Components/layout/Hero2";
+import Hero2 from "../components/sections/Hero2";
 import jobImage from "../assets/Images/background.jpg";
 
 const JobDetail = () => {
@@ -85,7 +85,7 @@ const JobDetail = () => {
               ></iframe>
             </div>
           ) : (
-            <div className="p-6 bg-indigo-50 rounded-lg border border-indigo-200">
+            <div className="p-6 bg-white rounded-lg border border-gray-200">
               <p className="text-lg text-gray-800 mb-2">
                 Interested candidates can send their resume to:
               </p>

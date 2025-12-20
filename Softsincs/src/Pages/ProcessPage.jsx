@@ -1,7 +1,7 @@
 import React from 'react';
-import Process from '../Components/layout/Process';
-import Hero2 from '../Components/layout/Hero2';
-import Faq from '../Components/layout/hero/Faq';
+import Process from '../components/sections/Process';
+import Hero2 from '../components/sections/Hero2';
+import Faq from '../components/sections/Faq';
 import bgContact from '../assets/Images/background.jpg';
 
 const processFaqs = [
@@ -46,7 +46,7 @@ const ProcessPage = () => {
 
       <div className="bg-white text-gray-800">
         {/* Page Header */}
-        <header className="text-center py-16 bg-gradient-to-r from-indigo-100 via-white to-indigo-50">
+        <header className="text-center py-16 bg-white">
           <h1 className="text-4xl md:text-5xl font-bold text-indigo-700 drop-shadow-sm">
             How We Work
           </h1>
@@ -66,7 +66,7 @@ const ProcessPage = () => {
         />
 
         {/* Call to Action */}
-        <div className="text-center py-10 px-4 bg-indigo-50">
+        <div className="text-center py-10 px-4 bg-white">
           <h2 className="text-2xl font-semibold text-indigo-700 mb-4">Have a project in mind?</h2>
           <p className="text-gray-600 mb-6">Let's collaborate and bring your vision to life.</p>
           <a

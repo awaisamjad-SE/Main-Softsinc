@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import blogData from '../../../data/blogData';
+import blogData from '../../data/blogData';
 
 const BlogSection = () => {
   useEffect(() => {
@@ -20,7 +20,7 @@ const BlogSection = () => {
           {blogData.slice(0, 3).map((blog, index) => (
             <div
               key={index}
-              className="bg-[#f9f9f9] rounded-xl shadow-md overflow-hidden flex flex-col transform transition duration-300 hover:scale-[1.03] hover:shadow-lg"
+              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transform transition duration-300 hover:scale-[1.03] hover:shadow-lg"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >

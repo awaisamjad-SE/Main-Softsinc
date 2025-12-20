@@ -104,19 +104,19 @@ const Hero = () => {
 
           {/* Stats Bar */}
           <div className="grid justify-center grid-cols-2 gap-4 px-4 mb-6 sm:mb-8 sm:flex sm:flex-wrap sm:gap-6 md:gap-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-primary-50 to-secondary-50 sm:p-4 rounded-xl">
+            <div className="p-3 text-center shadow-sm bg-white border border-gray-200 sm:p-4 rounded-xl">
               <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-primary-600">250+</div>
               <div className="text-xs text-gray-600 sm:text-sm">Projects</div>
             </div>
-            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-secondary-50 to-accent-50 sm:p-4 rounded-xl">
+            <div className="p-3 text-center shadow-sm bg-white border border-gray-200 sm:p-4 rounded-xl">
               <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-secondary-600">100+</div>
               <div className="text-xs text-gray-600 sm:text-sm">Clients</div>
             </div>
-            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-accent-50 to-primary-50 sm:p-4 rounded-xl">
+            <div className="p-3 text-center shadow-sm bg-white border border-gray-200 sm:p-4 rounded-xl">
               <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-accent-600">50+</div>
               <div className="text-xs text-gray-600 sm:text-sm">Team</div>
             </div>
-            <div className="p-3 text-center shadow-sm bg-gradient-to-br from-primary-50 to-accent-50 sm:p-4 rounded-xl">
+            <div className="p-3 text-center shadow-sm bg-white border border-gray-200 sm:p-4 rounded-xl">
               <div className="mb-1 text-xl font-bold sm:text-2xl md:text-3xl text-primary-600">5+</div>
               <div className="text-xs text-gray-600 sm:text-sm">Years</div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../Components/Common/SEO';
-import Hero2 from '../Components/layout/Hero2';
+import SEO from '../components/common/SEO';
+import Hero2 from '../components/sections/Hero2';
 import bg from '../assets/Images/background.jpg';
 
 const Sitemap = () => {
@@ -107,14 +107,14 @@ const Sitemap = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-gradient-purple text-white rounded-lg p-8 shadow-glow-lg">
+          <div className="bg-white text-gray-800 rounded-lg p-8 shadow-lg border border-gray-200">
             <h3 className="text-2xl font-bold mb-4">Can't Find What You're Looking For?</h3>
             <p className="text-lg mb-6 opacity-90">
               Our team is here to help you navigate and find exactly what you need.
             </p>
             <Link 
               to="/contact" 
-              className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200"
             >
               Contact Us
             </Link>

@@ -38,14 +38,14 @@ const Preloader = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-white overflow-hidden"
       role="alert"
       aria-busy="true"
     >
       {/* Animated Background Circles */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl animate-pulse delay-300"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-100 opacity-30 rounded-full blur-3xl animate-pulse\"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-100 opacity-30 rounded-full blur-3xl animate-pulse delay-300\"></div>
       </div>
 
       {/* Main Content */}

@@ -9,13 +9,14 @@
   }
   
   body {
-    @apply antialiased;
+    @apply antialiased bg-white;
     font-feature-settings: "kern" 1, "liga" 1;
     text-rendering: optimizeLegibility;
   }
   
   html {
     scroll-behavior: smooth;
+    background-color: #ffffff;
   }
 }
 

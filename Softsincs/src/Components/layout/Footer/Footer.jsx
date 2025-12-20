@@ -1,10 +1,10 @@
 import React from "react";
-import Logo from "../Navbar/Logo"; // Adjust path if needed
+import Logo from "../navbar/Logo"; // Adjust path if needed
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 text-primary-900 py-10 border-t border-primary-200">
-      <div className="grid grid-cols-1 gap-10 px-4 mx-auto max-w-7xl md:grid-cols-4">
+    <footer className="bg-white text-gray-800 py-10 border-t border-gray-200\">
+      <div className="grid grid-cols-1 gap-10 px-4 mx-auto max-w-7xl md:grid-cols-4\">" 
 
         {/* Brand Section */}
         <div className="flex flex-col items-start">

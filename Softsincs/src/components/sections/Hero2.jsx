@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Ui/Button";
+import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom"; // Needed to handle internal navigation
 
 const Hero2 = ({
@@ -24,23 +24,18 @@ const Hero2 = ({
 
   return (
     <div
-      className="relative w-full h-[500px] flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative w-full h-[500px] flex items-center justify-center bg-white"
     >
-<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
+<div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-90"></div>
       
-      <div className="relative z-10 text-center text-white max-w-4xl px-6 py-10">
-        <h4 className="text-lg md:text-xl font-semibold uppercase tracking-widest text-gray-300 mb-2">
+      <div className="relative z-10 text-center text-gray-800 max-w-4xl px-6 py-10">
+        <h4 className="text-lg md:text-xl font-semibold uppercase tracking-widest text-gray-600 mb-2\">
           {smallTitle}
         </h4>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900\">
           {title}
         </h1>
-        <p className="text-lg md:text-xl mb-6 text-gray-200">{description}</p>
+        <p className="text-lg md:text-xl mb-6 text-gray-700\">{description}</p>
 
         <Button text={buttonText} onClick={handleClick} variant="primary" />
       </div>

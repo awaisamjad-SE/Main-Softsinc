@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import servicesData from "../data/servicesData";
-import Hero2 from "../Components/layout/Hero2";
-import bgServices from "../assets/Images/background.jpg";
-import Process from "../Components/layout/Process";
+import Hero2 from "../components/sections/Hero2";
+import bg1 from "../assets/Images/background.jpg";
+import Process from "../components/sections/Process";
 
 function ServiceDetail() {
   const { slug } = useParams();
@@ -89,7 +89,7 @@ function ServiceDetail() {
         )}
 <Process/>
         {/* CTA */}
-        <div className="text-center mt-12 bg-[#f9f9ff] py-12 rounded-lg shadow-inner">
+        <div className="text-center mt-12 bg-white py-12 rounded-lg shadow-inner">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#2e35d7]">
             Ready to take the next step?
           </h3>

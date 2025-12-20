@@ -40,7 +40,7 @@ const features = [
 
 
   return (
-    <section className="bg-[#e4e7ff] text-white py-20 px-4 min-h-screen">
+    <section className="bg-white text-gray-800 py-20 px-4 min-h-screen">
       <div className="max-w-6xl px-4 mx-auto mb-16 text-center">
         <h2 className="text-4xl font-extrabold text-[#2e35d7] mb-4">
           What Makes Us Special?

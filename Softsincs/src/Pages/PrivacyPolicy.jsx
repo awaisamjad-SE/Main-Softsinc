@@ -1,6 +1,6 @@
 import React from 'react';
-import SEO from '../Components/Common/SEO';
-import Hero2 from '../Components/layout/Hero2';
+import SEO from '../components/common/SEO';
+import Hero2 from '../components/sections/Hero2';
 import bg from '../assets/Images/background.jpg';
 
 const PrivacyPolicy = () => {
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
             <p className="text-gray-700 leading-relaxed mb-4">
               If you have any questions about this Privacy Policy, please contact us:
             </p>
-            <div className="bg-gradient-purple text-white p-6 rounded-lg">
+            <div className="bg-white text-gray-800 p-6 rounded-lg border border-gray-200">
               <p className="mb-2"><strong>Email:</strong> privacy@softsincs.com</p>
               <p className="mb-2"><strong>Website:</strong> https://softsincs.com/contact</p>
               <p><strong>Address:</strong> Softsincs, Pakistan</p>

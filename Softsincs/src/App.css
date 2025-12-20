@@ -2,6 +2,7 @@
 #root {
   width: 100%;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 /* Custom Scrollbar */
@@ -10,7 +11,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(180deg, #f5f3ff 0%, #eff6ff 100%);
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {

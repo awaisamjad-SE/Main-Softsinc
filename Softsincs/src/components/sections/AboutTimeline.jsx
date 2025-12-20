@@ -24,10 +24,10 @@ const AboutTimeline = () => {
   };
 
   return (
-    <section className="bg-[#f0f4ff] dark:bg-gray-900 text-white py-16 px-4 min-h-screen">
+    <section className="bg-white text-gray-800 py-16 px-4 min-h-screen">
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold text-[#2e35d7] mb-4">Our Journey</h2>
-        <p className="text-[#2e35d7] max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto">
           Discover how Softsinc evolved from a spark of curiosity into a global force for educational innovation.
         </p>
       </div>
@@ -36,12 +36,12 @@ const AboutTimeline = () => {
                 {/* Our Mission */}
         <VerticalTimelineElement
           contentStyle={{
-            background: "#ffffffcc",
-            color: "#2e35d7",
+            background: "#ffffff",
+            color: "#1f2937",
             borderRadius: "30px",
-            border: "2px solid #2e35d7",
+            border: "2px solid #e5e7eb",
           }}
-          contentArrowStyle={{ borderRight: "7px solid rgba(255,255,255,0.3)" }}
+          contentArrowStyle={{ borderRight: "7px solid rgba(229,231,235,1)" }}
           iconStyle={{ background: "#2e35d7", color: "#fff" }}
           icon={<span className="text-lg font-bold">🎬</span>}
         >
@@ -88,12 +88,12 @@ const AboutTimeline = () => {
         {/* Our Story */}
         <VerticalTimelineElement
           contentStyle={{
-            background: "#ffffffcc",
-            color: "#2e35d7",
+            background: "#ffffff",
+            color: "#1f2937",
             borderRadius: "30px",
-            border: "2px solid #2e35d7",
+            border: "2px solid #e5e7eb",
           }}
-          contentArrowStyle={{ borderRight: "7px solid rgba(255,255,255,0.3)" }}
+          contentArrowStyle={{ borderRight: "7px solid rgba(229,231,235,1)" }}
           iconStyle={{ background: "#2e35d7", color: "#fff" }}
           icon={<span className="text-lg font-bold">🎯</span>}
         >
@@ -112,12 +112,12 @@ const AboutTimeline = () => {
         {/* Our Vision */}
         <VerticalTimelineElement
           contentStyle={{
-            background: "#ffffffcc",
-            color: "#2e35d7",
+            background: "#ffffff",
+            color: "#1f2937",
             borderRadius: "30px",
-            border: "2px solid #2e35d7",
+            border: "2px solid #e5e7eb",
           }}
-          contentArrowStyle={{ borderRight: "7px solid rgba(255,255,255,0.3)" }}
+          contentArrowStyle={{ borderRight: "7px solid rgba(229,231,235,1)" }}
           iconStyle={{ background: "#2e35d7", color: "#fff" }}
           icon={<span className="text-lg font-bold">🔭</span>}
         >

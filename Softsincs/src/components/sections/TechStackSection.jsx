@@ -1,5 +1,5 @@
 import React from "react";
-import techStack from "../../../data/techdata"; // your original import
+import techStack from "../../data/techdata"; // your original import
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -38,7 +38,7 @@ const TechStackSection = () => {
 
   return (
     <section
-      className="bg-gradient-to-tr from-indigo-100 via-indigo-50 to-indigo-100 py-20"
+      className="bg-white py-20"
       aria-label="Technology Stack"
     >
       <div className="max-w-7xl mx-auto px-6">

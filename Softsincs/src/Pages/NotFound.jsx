@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 
 const NotFound = () => {
   return (
@@ -11,7 +11,7 @@ const NotFound = () => {
         url="https://softsincs.com/404"
       />
       
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 px-4">
+      <div className="min-h-screen flex items-center justify-center bg-white px-4">
         <div className="max-w-2xl w-full text-center">
           {/* 404 Number */}
           <div className="mb-8">

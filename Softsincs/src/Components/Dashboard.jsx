@@ -47,7 +47,7 @@ export default function Dashboard() {
       {analytics.length > 0 && (
         <>
           <div className="grid grid-cols-3 gap-4 text-center my-4">
-            <div className="bg-gray-100 p-4 rounded shadow">
+            <div className="bg-white p-4 rounded shadow border border-gray-200\">
               <h2 className="text-lg font-semibold">Total Visits</h2>
               <p className="text-xl">{analytics.length}</p>
             </div>

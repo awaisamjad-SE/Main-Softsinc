@@ -3,38 +3,38 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Home Page Sections
-import Hero from './Components/layout/hero/Hero';
-import Services from './Components/layout/hero/Services';
-import WhyChooseUs from './Components/layout/hero/WhyChooseUs';
-import BlogSection from './Components/layout/hero/BlogSection';
-import TechStackSection from './Components/layout/hero/TechStackSection';
-import KeyHighlights from './Components/layout/hero/KeyHighlights';
-import Testimonials from './Components/layout/hero/Testimonials';
-import ContactSection from './Components/layout/hero/ContactSection';
-import './Components/Dashboard'
+import Hero from './components/sections/Hero';
+import Services from './components/sections/Services';
+import WhyChooseUs from './components/sections/WhyChooseUs';
+import BlogSection from './components/sections/BlogSection';
+import TechStackSection from './components/sections/TechStackSection';
+import KeyHighlights from './components/sections/KeyHighlights';
+import Testimonials from './components/sections/Testimonials';
+import ContactSection from './components/sections/ContactSection';
+import './components/Dashboard'
 // Standalone Pages
-import NotFound from './Pages/NotFound';
-import About from './Pages/About';
-import ServiceDetail from './Pages/ServiceDetail';
-import BlogPage from './Pages/BlogPage';
-import BlogDetail from './Pages/BlogDetail';
-import Contact from './Pages/ContactUs';
-import TeamPage from './Pages/TeamPage'; 
-import TeamDetail from './Pages/TeamDetail';
-import ServicePage from './Pages/ServicesPage'; 
-import ProcessPage from './Pages/ProcessPage';
-import LeadershipPage from './Pages/LeadershipPage';
-import TechnologyPage from './Pages/TechnologyPage';
-import CareerPage from './Pages/CareerPage';
-import JobDetail from './Pages/JobDetail';
-import InternshipPage from "./Pages/InternshipPage";
-import InternshipDetail from "./Pages/InternshipDetail";
-import StartupPage from './Pages/Startup';
-import EnterprisesPage from './Pages/Enterprises';
-import PrivacyPolicy from './Pages/PrivacyPolicy';
-import TermsOfService from './Pages/TermsOfService';
-import Sitemap from './Pages/Sitemap';
-import SEO from './Components/Common/SEO';
+import NotFound from './pages/NotFound';
+import About from './pages/About';
+import ServiceDetail from './pages/ServiceDetail';
+import BlogPage from './pages/BlogPage';
+import BlogDetail from './pages/BlogDetail';
+import Contact from './pages/ContactUs';
+import TeamPage from './pages/TeamPage'; 
+import TeamDetail from './pages/TeamDetail';
+import ServicePage from './pages/ServicesPage'; 
+import ProcessPage from './pages/ProcessPage';
+import LeadershipPage from './pages/LeadershipPage';
+import TechnologyPage from './pages/TechnologyPage';
+import CareerPage from './pages/CareerPage';
+import JobDetail from './pages/JobDetail';
+import InternshipPage from "./pages/InternshipPage";
+import InternshipDetail from "./pages/InternshipDetail";
+import StartupPage from './pages/Startup';
+import EnterprisesPage from './pages/Enterprises';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Sitemap from './pages/Sitemap';
+import SEO from './components/common/SEO';
 
 // HomePage composed of multiple sections
 const HomePage = () => (

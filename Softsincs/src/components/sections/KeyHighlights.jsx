@@ -38,7 +38,7 @@ const highlights = [
 
 const KeyHighlights = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl px-4 mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

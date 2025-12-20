@@ -11,7 +11,7 @@ const DevelopmentTeam = () => {
   const developers = teamData.filter((member) => member.category === "development");
 
   return (
-    <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
+    <section className="py-6 bg-white text-gray-800">
       <div className="container p-4 mx-auto space-y-16 sm:p-10">
         <div className="space-y-4">
           <h3 className="text-2xl font-bold leading-none sm:text-5xl">Meet our Development Team Team</h3>

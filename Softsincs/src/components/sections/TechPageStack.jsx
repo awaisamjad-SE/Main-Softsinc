@@ -1,5 +1,5 @@
 import React from "react";
-import techData from "../../../data/techdata"; // same data source as before
+import techData from "../../data/techdata"; // same data source as before
 
 const TechCard = ({ Icon, label }) => (
   <div
@@ -43,7 +43,7 @@ const TechCard = ({ Icon, label }) => (
 const TechPageStack = () => {
   return (
     <section
-      className="bg-gradient-to-tr from-indigo-100 via-indigo-50 to-indigo-100 py-20 min-h-screen"
+      className="bg-white py-20 min-h-screen"
       aria-label="Technology Stack Grid"
     >
       <div className="max-w-7xl mx-auto px-6">

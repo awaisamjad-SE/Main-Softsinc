@@ -19,7 +19,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -140,7 +140,7 @@ const ContactSection = () => {
             <div className="card bg-white">
               <button
                 onClick={handleFormToggle}
-                className="w-full py-4 px-6 bg-gradient-purple text-white font-semibold rounded-lg hover:shadow-glow transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                className="w-full py-4 px-6 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
               >
                 <svg className={`w-5 h-5 transition-transform duration-300 ${showForm ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -150,8 +150,8 @@ const ContactSection = () => {
 
               {showForm && (
                 <div className="mt-6 animate-fade-in-up">
-                  <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                    <p className="text-sm text-gray-600 flex items-start">
+                  <div className="bg-white rounded-lg p-4 mb-4 border border-gray-200\">
+                    <p className="text-sm text-gray-600 flex items-start\">
                       <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                       </svg>

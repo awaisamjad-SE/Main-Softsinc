@@ -1,10 +1,10 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
-import Hero2 from "../Components/layout/Hero2";
-import bgStartup from "../assets/Images/background.jpg"; // ✅ Use your startup-related image
-import Services from "../Components/layout/hero/Services"; // Reuse for startup-focused services if needed
-import TechStackSection from "../Components/layout/hero/TechStackSection";
-import ContactSection from "../Components/layout/hero/ContactSection";
+import SEO from '../components/common/SEO';
+import Hero2 from "../components/sections/Hero2";
+import bg1 from "../assets/Images/background.jpg"; // Use your startup hero bg
+import Services from "../components/sections/Services"; // Reuse for startup-focused services if needed
+import TechStackSection from "../components/sections/TechStackSection";
+import ContactSection from "../components/sections/ContactSection";
 
 // Optional: Create a new section component like StartupProcessSection, IndustriesWeServe, etc.
 

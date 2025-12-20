@@ -1,9 +1,9 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
-import TechPageStack from "../Components/layout/hero/TechPageStack"; // adjust the path if needed
-import Hero2 from "../Components/layout/Hero2";
+import SEO from '../components/common/SEO';
+import TechPageStack from "../components/sections/TechPageStack"; // adjust the path if needed
+import Hero2 from "../components/sections/Hero2";
 import imgtech from "../assets/Images/background.jpg";
-import Faq from "../Components/layout/hero/Faq"; // Correct import name
+import Faq from "../components/sections/Faq"; // Correct import name
 
 const faqs = [
   {

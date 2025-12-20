@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import teamData from '../data/teamData';
-import Hero2 from "../Components/layout/Hero2";
+import Hero2 from "../components/sections/Hero2";
 import bgContact from '../assets/Images/background.jpg';
 
 const TeamDetail = () => {
@@ -19,7 +19,7 @@ const TeamDetail = () => {
         buttonLink="/contact-form"
         backgroundImage={bgContact}
       />
-<div className="min-h-screen flex flex-col justify-center items-center p-8 bg-gray-50 dark:bg-gray-900">
+<div className="min-h-screen flex flex-col justify-center items-center p-8 bg-white">
         <h1 className="text-3xl font-bold text-red-600 mb-4">Team member not found</h1>
         <Link to="/team" className="text-blue-600 hover:underline text-lg">
           ← Back to Team
@@ -42,7 +42,7 @@ const TeamDetail = () => {
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
-        <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-3xl overflow-hidden flex flex-col md:flex-row md:items-center md:space-x-12 p-8 md:p-12">
+        <div className="bg-white shadow-2xl rounded-3xl overflow-hidden flex flex-col md:flex-row md:items-center md:space-x-12 p-8 md:p-12">
           {/* Member Image */}
           <div className="flex-shrink-0 mx-auto md:mx-0 mb-8 md:mb-0 w-48 h-48 rounded-full overflow-hidden shadow-lg ring-4 ring-indigo-500 dark:ring-indigo-400">
             <img

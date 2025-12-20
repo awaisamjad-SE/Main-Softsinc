@@ -20,7 +20,7 @@ const Leadership = () => {
   };
 
   return (
-    <section className="py-10 text-gray-800 bg-gray-100">
+    <section className="py-10 text-gray-800 bg-white">
       <div className="container flex flex-col items-center justify-center px-4 mx-auto space-y-8 sm:px-10">
         <h1 className="text-4xl font-bold text-center sm:text-5xl">Leadership</h1>
         <p className="max-w-2xl text-center text-gray-600">
