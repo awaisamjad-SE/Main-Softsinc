@@ -1,73 +1,153 @@
 import React, { useState } from "react";
 
 const ContactSection = () => {
-  const googleFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSeCTy_otfq3-1HMWEG075-vM2cThXd3rr03M4aRJmI3-k8ChA/viewform?embedded=true";
-  const [showForm, setShowForm] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-  const handleFormToggle = () => {
-    setShowForm((prev) => !prev);
-    if (!showForm) {
-      // Scroll to form when opening
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Create email body
+      const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Message: ${formData.message}
+      `.trim();
+
+      // Use mailto link as a fallback
+      const mailtoLink = `mailto:support@softsincs.com?subject=Contact Form Submission from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Try to open default email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setErrors({});
+      
       setTimeout(() => {
-        document.getElementById('contact-form-container')?.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        });
-      }, 100);
+        setSubmitStatus(null);
+      }, 5000);
+      
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Let's <span className="text-gradient">Connect</span>
+          <span className="inline-block px-4 py-2 bg-purple-900 bg-opacity-50 text-purple-300 rounded-full text-sm font-semibold mb-4">
+            📧 Get In Touch
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Connect</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Info Card */}
-            <div className="card-gradient">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-              <p className="text-gray-600 mb-8">
-                Fill out our contact form and we'll get back to you within 24 hours. 
-                Let's discuss how we can help bring your ideas to life.
+            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <p className="text-gray-300 mb-8">
+                Fill out our contact form and we'll get back to you within 24 hours. Let's discuss how we can help bring your ideas to life.
               </p>
-              
+
               <div className="space-y-6">
                 {/* Location */}
                 <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-700 transition-colors">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Office Location</h4>
-                    <p className="text-gray-600 mt-1">Ghirnatah, Dammam, Saudi Arabia</p>
+                    <h4 className="text-lg font-semibold text-white">Office Location</h4>
+                    <p className="text-gray-300 mt-1">Ghirnatah, Dammam, Saudi Arabia</p>
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-secondary-600 rounded-lg flex items-center justify-center group-hover:bg-secondary-700 transition-colors">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.15a1 1 0 01.99.83l.74 4.43a1 1 0 01-.54 1.06l-1.55.77a11.03 11.03 0 006.1 6.1l.77-1.55a1 1 0 011.06-.54l4.43.74a1 1 0 01.83.99V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Phone Number</h4>
-                    <a href="tel:+966152255365" className="text-secondary-600 hover:text-secondary-700 mt-1 block font-medium">
+                    <h4 className="text-lg font-semibold text-white">Phone Number</h4>
+                    <a href="tel:+966152255365" className="text-pink-400 hover:text-pink-300 mt-1 block font-medium transition-colors">
                       +966 1 5225 5365
                     </a>
                   </div>
@@ -75,16 +155,16 @@ const ContactSection = () => {
 
                 {/* Email */}
                 <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center group-hover:bg-accent-700 transition-colors">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Email Address</h4>
-                    <a href="mailto:Softsincs@gmail.com" className="text-accent-600 hover:text-accent-700 mt-1 block font-medium">
-                      Softsincs@gmail.com
+                    <h4 className="text-lg font-semibold text-white">Email Address</h4>
+                    <a href="mailto:support@softsincs.com" className="text-indigo-400 hover:text-indigo-300 mt-1 block font-medium transition-colors">
+                      support@softsincs.com
                     </a>
                   </div>
                 </div>
@@ -92,9 +172,9 @@ const ContactSection = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="card bg-white">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Business Hours</h3>
-              <div className="space-y-2 text-gray-600">
+            <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-8 shadow-lg text-white">
+              <h3 className="text-xl font-bold mb-4">Business Hours</h3>
+              <div className="space-y-3">
                 <div className="flex justify-between">
                   <span>Monday - Friday:</span>
                   <span className="font-semibold">9:00 AM - 6:00 PM</span>
@@ -111,21 +191,21 @@ const ContactSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="card bg-white">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Follow Us</h3>
+            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="https://facebook.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors transform hover:scale-110">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://facebook.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                   </svg>
                 </a>
-                <a href="https://twitter.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-secondary-600 text-white rounded-full flex items-center justify-center hover:bg-secondary-700 transition-colors transform hover:scale-110">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://twitter.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-500 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 8.09v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                   </svg>
                 </a>
-                <a href="https://linkedin.com/company/softsincs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-accent-600 text-white rounded-full flex items-center justify-center hover:bg-accent-700 transition-colors transform hover:scale-110">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://linkedin.com/company/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
                     <rect x="2" y="9" width="4" height="12"/>
                     <circle cx="4" cy="4" r="2"/>
@@ -136,50 +216,145 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div id="contact-form-container" className="lg:sticky lg:top-24">
-            <div className="card bg-white">
-              <button
-                onClick={handleFormToggle}
-                className="w-full py-4 px-6 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
-              >
-                <svg className={`w-5 h-5 transition-transform duration-300 ${showForm ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-                <span>{showForm ? "Hide Contact Form" : "Open Contact Form"}</span>
-              </button>
-
-              {showForm && (
-                <div className="mt-6 animate-fade-in-up">
-                  <div className="bg-white rounded-lg p-4 mb-4 border border-gray-200\">
-                    <p className="text-sm text-gray-600 flex items-start\">
-                      <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                      </svg>
-                      <span>Please fill out all required fields. We'll respond within 24 hours.</span>
-                    </p>
-                  </div>
-
-                  <div className="relative" style={{ minHeight: '600px' }}>
-                    <iframe
-                      src={googleFormLink}
-                      title="Contact Form"
-                      className="w-full h-[600px] border-0 rounded-lg"
-                      frameBorder="0"
-                      marginHeight="0"
-                      marginWidth="0"
-                    >
-                      Loading form...
-                    </iframe>
-                  </div>
-
-                  <div className="mt-4 p-4 bg-primary-50 rounded-lg">
-                    <p className="text-sm text-primary-800">
-                      <strong>💡 Quick Response:</strong> For urgent inquiries, call us directly at 
-                      <a href="tel:+966152255365" className="font-bold ml-1 hover:text-primary-600">+966 1 5225 5365</a>
-                    </p>
+          <div className="lg:sticky lg:top-24">
+            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700">
+              <h3 className="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+              
+              {submitStatus === "success" && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start animate-fade-in">
+                  <svg className="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <div>
+                    <h4 className="text-green-800 font-semibold mb-1">Message Sent Successfully!</h4>
+                    <p className="text-green-700 text-sm">Your default email client should open. If not, please email us directly at support@softsincs.com</p>
                   </div>
                 </div>
               )}
+
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start animate-fade-in">
+                  <svg className="w-6 h-6 text-red-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  <div>
+                    <h4 className="text-red-800 font-semibold mb-1">Oops! Something went wrong</h4>
+                    <p className="text-red-700 text-sm">Please try again or email us directly at support@softsincs.com</p>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Field */}
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-200 mb-2">
+                    Full Name <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className={`w-full px-4 py-3 bg-gray-700 text-white border ${
+                      errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-purple-500"
+                    } rounded-xl focus:outline-none focus:ring-2 transition-all placeholder-gray-400`}
+                  />
+                  {errors.name && (
+                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.name}
+                    </p>
+                  )}
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-200 mb-2">
+                    Email Address <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    className={`w-full px-4 py-3 bg-gray-700 text-white border ${
+                      errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-purple-500"
+                    } rounded-xl focus:outline-none focus:ring-2 transition-all placeholder-gray-400`}
+                  />
+                  {errors.email && (
+                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+
+                {/* Message Field */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-200 mb-2">
+                    Your Message <span className="text-red-400">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your project..."
+                    className={`w-full px-4 py-3 bg-gray-700 text-white border ${
+                      errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-purple-500"
+                    } rounded-xl focus:outline-none focus:ring-2 transition-all resize-none placeholder-gray-400`}
+                  ></textarea>
+                  {errors.message && (
+                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 px-6 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 ${
+                    isSubmitting
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl"
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </>
+                  )}
+                </button>
+
+                <p className="text-sm text-gray-400 text-center">
+                  We typically respond within 24 hours
+                </p>
+              </form>
             </div>
           </div>
         </div>
@@ -189,135 +364,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
-
-
-// // src/Components/ContactSection.jsx
-
-// import React, { useState } from 'react';
-// import { saveContact } from '../../../data/contactData'; // adjust path as needed
-
-// const ContactSection = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     message: '',
-//   });
-
-//   const [errors, setErrors] = useState({});
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData((prev) => ({
-//       ...prev,
-//       [name]: value,
-//     }));
-//   };
-
-//   const validate = () => {
-//     const newErrors = {};
-//     if (!formData.name.trim()) newErrors.name = 'Name is required';
-//     if (!formData.email.trim()) newErrors.email = 'Email is required';
-//     if (!formData.message.trim()) newErrors.message = 'Message is required';
-//     return newErrors;
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const validationErrors = validate();
-//     if (Object.keys(validationErrors).length > 0) {
-//       setErrors(validationErrors);
-//       return;
-//     }
-
-//     saveContact(formData);
-//     alert('Message sent successfully!');
-//     setFormData({ name: '', email: '', message: '' });
-//     setErrors({});
-//   };
-
-//   return (
-//     <section className="py-12 bg-gray-50 dark:bg-gray-100 dark:text-gray-900">
-//       <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
-        
-//         {/* Contact Info */}
-//         <div className="py-6 md:py-0 md:px-6">
-//           <h1 className="text-4xl font-bold">Get in touch</h1>
-//           <p className="pt-2 pb-4 text-gray-600">Fill in the form to start a conversation with us.</p>
-//           <div className="space-y-4 text-gray-700">
-//             <p className="flex items-center">
-//               <svg className="w-5 h-5 mr-2 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
-//                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-//               </svg>
-//               <span>643 L Block, Sabzazar, Lahore</span>
-//             </p>
-//             <p className="flex items-center">
-//               <svg className="w-5 h-5 mr-2 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
-//                 <path d="M2 3a1 1 0 011-1h2.15a1 1 0 01.99.83l.74 4.43a1 1 0 01-.54 1.06l-1.55.77a11.03 11.03 0 006.1 6.1l.77-1.55a1 1 0 011.06-.54l4.43.74a1 1 0 01.83.99V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-//               </svg>
-//               <span>+92(347) 3706598</span>
-//             </p>
-//             <p className="flex items-center">
-//               <svg className="w-5 h-5 mr-2 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
-//                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-//                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-//               </svg>
-//               <span>Softsincs@gmail.com</span>
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Contact Form */}
-//         <form onSubmit={handleSubmit} noValidate className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
-//           <label className="block">
-//             <span className="mb-1 text-sm font-medium">Full Name</span>
-//             <input
-//               name="name"
-//               type="text"
-//               value={formData.name}
-//               onChange={handleChange}
-//               placeholder="Muhammad Ahmad"
-//               className="block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:ring-2 focus:ring-violet-500 focus:outline-none"
-//             />
-//             {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
-//           </label>
-
-//           <label className="block">
-//             <span className="mb-1 text-sm font-medium">Email Address</span>
-//             <input
-//               name="email"
-//               type="email"
-//               value={formData.email}
-//               onChange={handleChange}
-//               placeholder="Muhammad@example.com"
-//               className="block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:ring-2 focus:ring-violet-500 focus:outline-none"
-//             />
-//             {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
-//           </label>
-
-//           <label className="block">
-//             <span className="mb-1 text-sm font-medium">Message</span>
-//             <textarea
-//               name="message"
-//               rows="4"
-//               value={formData.message}
-//               onChange={handleChange}
-//               placeholder="Write your message here..."
-//               className="block w-full rounded-md border border-gray-300 p-2 shadow-sm focus:ring-2 focus:ring-violet-500 focus:outline-none"
-//             ></textarea>
-//             {errors.message && <p className="text-sm text-red-600">{errors.message}</p>}
-//           </label>
-//             <button
-//               type="submit"
-//               className="w-full py-3 bg-[#2e35d7] text-white font-semibold rounded-lg hover:bg-white hover:text-[#2e35d7] hover:border-2 border-[#2e35d7] transition duration-300"
-//             >
-//               Send Message
-//             </button>
-//         </form>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ContactSection;
-

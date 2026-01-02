@@ -7,26 +7,26 @@ import "swiper/css/pagination";
 
 const TechCard = ({ Icon, label }) => (
   <div
-    className="bg-white/20 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center
+    className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center
                cursor-pointer transition-transform duration-300 ease-in-out
-               shadow-md hover:shadow-indigo-500/60 hover:shadow-lg hover:scale-105 hover:bg-indigo-600
-               ring-1 ring-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500
+               shadow-md hover:shadow-purple-500/60 hover:shadow-lg hover:scale-105 hover:bg-purple-600
+               ring-1 ring-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500
                relative"
     aria-label={label}
     role="img"
     tabIndex={0}
   >
     <Icon
-      className="text-indigo-900 hover:text-white text-5xl mb-3 drop-shadow-md
+      className="text-purple-400 hover:text-white text-5xl mb-3 drop-shadow-md
                  transition-colors duration-300 ease-in-out"
       aria-hidden="true"
     />
-    <p className="text-indigo-900 hover:text-white font-semibold text-center text-sm md:text-base select-none">
+    <p className="text-gray-200 hover:text-white font-semibold text-center text-sm md:text-base select-none">
       {label}
     </p>
     <span
       className="absolute inset-0 rounded-2xl pointer-events-none
-                 opacity-0 hover:opacity-30 bg-gradient-to-tr from-indigo-400 to-indigo-700
+                 opacity-0 hover:opacity-30 bg-gradient-to-tr from-purple-400 to-pink-600
                  transition-opacity duration-300 ease-in-out blur-xl z-[-1]"
     />
   </div>
@@ -38,12 +38,12 @@ const TechStackSection = () => {
 
   return (
     <section
-      className="bg-white py-20"
+      className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 py-20"
       aria-label="Technology Stack"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-indigo-900 pb-14 text-center drop-shadow-sm">
-          Our Tech Stack
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white pb-14 text-center drop-shadow-sm">
+          Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Tech Stack</span>
         </h2>
 
         <Swiper
