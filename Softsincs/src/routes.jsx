@@ -3,38 +3,38 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Home Page Sections
-import Hero from './components/sections/Hero';
-import Services from './components/sections/Services';
-import WhyChooseUs from './components/sections/WhyChooseUs';
-import BlogSection from './components/sections/BlogSection';
-import TechStackSection from './components/sections/TechStackSection';
-import KeyHighlights from './components/sections/KeyHighlights';
-import Testimonials from './components/sections/Testimonials';
-import ContactSection from './components/sections/ContactSection';
-import './components/Dashboard'
+import Hero from './components/sections/Hero.jsx';
+import Services from './components/sections/Services.jsx';
+import WhyChooseUs from './components/sections/WhyChooseUs.jsx';
+import BlogSection from './components/sections/BlogSection.jsx';
+import TechStackSection from './components/sections/TechStackSection.jsx';
+import KeyHighlights from './components/sections/KeyHighlights.jsx';
+import Testimonials from './components/sections/Testimonials.jsx';
+import ContactSection from './components/sections/ContactSection.jsx';
+import './components/Dashboard.jsx';
 // Standalone Pages
-import NotFound from './pages/NotFound';
-import About from './pages/About';
-import ServiceDetail from './pages/ServiceDetail';
-import BlogPage from './pages/BlogPage';
-import BlogDetail from './pages/BlogDetail';
-import Contact from './pages/ContactUs';
-import TeamPage from './pages/TeamPage'; 
-import TeamDetail from './pages/TeamDetail';
-import ServicePage from './pages/ServicesPage'; 
-import ProcessPage from './pages/ProcessPage';
-import LeadershipPage from './pages/LeadershipPage';
-import TechnologyPage from './pages/TechnologyPage';
-import CareerPage from './pages/CareerPage';
-import JobDetail from './pages/JobDetail';
-import InternshipPage from "./pages/InternshipPage";
-import InternshipDetail from "./pages/InternshipDetail";
-import StartupPage from './pages/Startup';
-import EnterprisesPage from './pages/Enterprises';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import Sitemap from './pages/Sitemap';
-import SEO from './components/common/SEO';
+import NotFound from './pages/NotFound.jsx';
+import About from './pages/About.jsx';
+import ServiceDetail from './pages/ServiceDetail.jsx';
+import BlogPage from './pages/BlogPage.jsx';
+import BlogDetail from './pages/BlogDetail.jsx';
+import Contact from './pages/ContactUs.jsx';
+import TeamPage from './pages/TeamPage.jsx'; 
+import TeamDetail from './pages/TeamDetail.jsx';
+import ServicePage from './pages/ServicesPage.jsx'; 
+import ProcessPage from './pages/ProcessPage.jsx';
+import LeadershipPage from './pages/LeadershipPage.jsx';
+import TechnologyPage from './pages/TechnologyPage.jsx';
+import CareerPage from './pages/CareerPage.jsx';
+import JobDetail from './pages/JobDetail.jsx';
+import InternshipPage from "./pages/InternshipPage.jsx";
+import InternshipDetail from "./pages/InternshipDetail.jsx";
+import StartupPage from './pages/Startup.jsx';
+import EnterprisesPage from './pages/Enterprises.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import TermsOfService from './pages/TermsOfService.jsx';
+import Sitemap from './pages/Sitemap.jsx';
+import SEO from './components/common/SEO.jsx';
 
 // HomePage composed of multiple sections
 const HomePage = () => (
