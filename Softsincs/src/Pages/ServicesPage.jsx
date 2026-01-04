@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from '../components/Common/SEO';
+import SEO from '../Components/Common/SEO';
 import Services from "../components/sections/Services";
 import Hero2 from "../components/sections/Hero2";
 import bgServices from "../assets/Images/background.jpg"; // ✅ Use a relevant image

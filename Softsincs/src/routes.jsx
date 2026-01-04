@@ -11,7 +11,7 @@ import TechStackSection from './components/sections/TechStackSection.jsx';
 import KeyHighlights from './components/sections/KeyHighlights.jsx';
 import Testimonials from './components/sections/Testimonials.jsx';
 import ContactSection from './components/sections/ContactSection.jsx';
-import './components/Dashboard.jsx';
+import './Components/Dashboard.jsx';
 // Standalone Pages
 import NotFound from './Pages/NotFound.jsx';
 import About from './Pages/About.jsx';
@@ -34,7 +34,7 @@ import EnterprisesPage from './Pages/Enterprises.jsx';
 import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
 import TermsOfService from './Pages/TermsOfService.jsx';
 import Sitemap from './Pages/Sitemap.jsx';
-import SEO from './components/Common/SEO.jsx';
+import SEO from './Components/Common/SEO.jsx';
 
 // HomePage composed of multiple sections
 const HomePage = () => (

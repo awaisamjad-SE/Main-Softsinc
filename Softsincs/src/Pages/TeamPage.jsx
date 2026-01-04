@@ -1,7 +1,7 @@
 // src/pages/TeamPage.jsx
 
 import React from 'react';
-import SEO from '../components/Common/SEO';
+import SEO from '../Components/Common/SEO';
 import { Link } from 'react-router-dom';
 import teamData from '../data/teamData';
 import Hero2 from "../components/sections/Hero2"

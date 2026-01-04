@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from '../components/Common/SEO';
+import SEO from '../Components/Common/SEO';
 import TechPageStack from "../components/sections/TechPageStack"; // adjust the path if needed
 import Hero2 from "../components/sections/Hero2";
 import imgtech from "../assets/Images/background.jpg";
