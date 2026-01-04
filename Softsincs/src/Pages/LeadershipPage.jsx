@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero2 from '../Components/sections/Hero2'
+import Hero2 from '../components/sections/Hero2'
 import bgLeadership from '../assets/Images/background.jpg'
-import Leadership from '../Components/sections/Leadership'
+import Leadership from '../components/sections/Leadership'
 function LeadershipPage() {
   return (
     <div>

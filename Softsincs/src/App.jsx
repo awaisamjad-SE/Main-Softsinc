@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './Components/layout/Navbar/Navbar.jsx';
-import Footer from './Components/layout/Footer/Footer.jsx';
+import Navbar from './components/layout/Navbar/Navbar.jsx';
+import Footer from './components/layout/Footer/Footer.jsx';
 import AppRoutes from './routes';
-import ScrollToTop from './Components/Common/ScrollToTop.jsx';
+import ScrollToTop from './components/Common/ScrollToTop.jsx';
 import RouteChangePreloader from './routes/RouteChangePreloader.jsx';
-import ParticleBackground from './Components/Common/ParticleBackground.jsx';
+import ParticleBackground from './components/Common/ParticleBackground.jsx';
 
 function App() {
   return (

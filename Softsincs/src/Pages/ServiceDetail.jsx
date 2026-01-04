@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import servicesData from "../data/servicesData";
-import Hero2 from "../Components/sections/Hero2";
+import Hero2 from "../components/sections/Hero2";
 import bg1 from "../assets/Images/background.jpg";
-import Process from "../Components/sections/Process";
+import Process from "../components/sections/Process";
 
 function ServiceDetail() {
   const { slug } = useParams();

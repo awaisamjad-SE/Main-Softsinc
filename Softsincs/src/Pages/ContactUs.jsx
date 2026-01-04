@@ -1,8 +1,8 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
-import Hero2 from "../Components/sections/Hero2";
+import SEO from '../components/Common/SEO';
+import Hero2 from "../components/sections/Hero2";
 import bgContact from "../assets/Images/background.jpg"; // Use your own contact background image
-import ContactSection from "../Components/sections/ContactSection";
+import ContactSection from "../components/sections/ContactSection";
 const Contact = () => {
   return (
     <>

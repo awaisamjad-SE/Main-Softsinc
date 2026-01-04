@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/Common/SEO';
 
 const NotFound = () => {
   return (

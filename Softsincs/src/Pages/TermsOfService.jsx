@@ -1,6 +1,6 @@
 import React from 'react';
-import SEO from '../Components/Common/SEO';
-import Hero2 from '../Components/sections/Hero2';
+import SEO from '../components/Common/SEO';
+import Hero2 from '../components/sections/Hero2';
 import bg from '../assets/Images/background.jpg';
 
 const TermsOfService = () => {

@@ -1,9 +1,9 @@
 // src/pages/InternshipPage.jsx
 import React from "react";
-import SEO from '../Components/Common/SEO';
-import Hero2 from "../Components/sections/Hero2";
-import InternshipSection from "../Components/sections/InternshipSection";
-import Faq from "../Components/sections/Faq";
+import SEO from '../components/Common/SEO';
+import Hero2 from "../components/sections/Hero2";
+import InternshipSection from "../components/sections/InternshipSection";
+import Faq from "../components/sections/Faq";
 import internshipFaqs from "../data/internshipFaqs"; // you'll create this
 import bgInternship from "../assets/Images/background.jpg"; // your own background image
 
