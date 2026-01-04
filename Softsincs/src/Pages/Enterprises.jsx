@@ -1,10 +1,10 @@
 import React from "react";
-import SEO from '../components/common/SEO';
-import Hero2 from "../components/sections/Hero2";
+import SEO from '../Components/Common/SEO';
+import Hero2 from "../Components/sections/Hero2";
 import bgEnterprises from "../assets/Images/background.jpg"; // ✅ Make sure this image exists
-import Services from "../components/sections/Services"; // Optional: reuse with filtered enterprise services
-import TechStackSection from "../components/sections/TechStackSection";
-import ContactSection from "../components/sections/ContactSection";
+import Services from "../Components/sections/Services"; // Optional: reuse with filtered enterprise services
+import TechStackSection from "../Components/sections/TechStackSection";
+import ContactSection from "../Components/sections/ContactSection";
 
 const EnterprisesPage = () => {
   return (

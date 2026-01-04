@@ -1,13 +1,13 @@
 // src/pages/TeamPage.jsx
 
 import React from 'react';
-import SEO from '../components/common/SEO';
+import SEO from '../Components/Common/SEO';
 import { Link } from 'react-router-dom';
 import teamData from '../data/teamData';
-import Hero2 from "../components/sections/Hero2"
+import Hero2 from "../Components/sections/Hero2"
 import bgContact from '../assets/Images/background.jpg'; 
-import Leadership from '../components/sections/Leadership';
-import DevelopmentTeam from '../components/sections/DevelopmentTeam'; 
+import Leadership from '../Components/sections/Leadership';
+import DevelopmentTeam from '../Components/sections/DevelopmentTeam'; 
 const TeamPage = () => {
   return (
 <>

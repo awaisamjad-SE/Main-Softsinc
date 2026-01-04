@@ -1,10 +1,10 @@
 import React from "react";
-import SEO from '../components/common/SEO';
-import Services from "../components/sections/Services";
-import Hero2 from "../components/sections/Hero2";
+import SEO from '../Components/Common/SEO';
+import Services from "../Components/sections/Services";
+import Hero2 from "../Components/sections/Hero2";
 import bgServices from "../assets/Images/background.jpg"; // ✅ Use a relevant image
-import TechStackSection from "../components/sections/TechStackSection"; 
-import ContactSection from "../components/sections/ContactSection";
+import TechStackSection from "../Components/sections/TechStackSection"; 
+import ContactSection from "../Components/sections/ContactSection";
 const ServicesPage = () => {
   return (
     <div>

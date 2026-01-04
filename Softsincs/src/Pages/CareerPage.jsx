@@ -1,9 +1,9 @@
 // src/pages/CareerPage.jsx
 import React from "react";
-import SEO from '../components/common/SEO';
-import Hero2 from "../components/sections/Hero2";
-import CareerSection from "../components/sections/CareerSection";
-import Faq from "../components/sections/Faq"; // Assuming reusable FAQ component
+import SEO from '../Components/Common/SEO';
+import Hero2 from "../Components/sections/Hero2";
+import CareerSection from "../Components/sections/CareerSection";
+import Faq from "../Components/sections/Faq"; // Assuming reusable FAQ component
 import careerFaqs from "../data/careerFaqs"; 
 import bgCareer from "../assets/Images/background.jpg"; // Use any relevant background
 

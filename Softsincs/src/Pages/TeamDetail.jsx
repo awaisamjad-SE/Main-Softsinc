@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import teamData from '../data/teamData';
-import Hero2 from "../components/sections/Hero2";
+import Hero2 from "../Components/sections/Hero2";
 import bgContact from '../assets/Images/background.jpg';
 
 const TeamDetail = () => {

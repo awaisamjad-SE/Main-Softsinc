@@ -1,10 +1,10 @@
-import SEO from '../components/common/SEO';
-import Hero2 from "../components/sections/Hero2";
+import SEO from '../Components/Common/SEO';
+import Hero2 from "../Components/sections/Hero2";
 import bg1 from "../assets/Images/background.jpg";
-import AboutTimline from '../components/sections/AboutTimeline'; 
-import Testimonials from '../components/sections/Testimonials';
-import PartnersSection from '../components/sections/PartnersSection'; // Assuming 
-import Leadership from '../components/sections/Leadership'; 
+import AboutTimline from '../Components/sections/AboutTimeline'; 
+import Testimonials from '../Components/sections/Testimonials';
+import PartnersSection from '../Components/sections/PartnersSection'; // Assuming 
+import Leadership from '../Components/sections/Leadership'; 
 const About = () => {
   return (
     <>

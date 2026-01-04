@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import blogData from "../data/blogData";
-import Hero2 from "../components/sections/Hero2";
+import Hero2 from "../Components/sections/Hero2";
 import bgContact from "../assets/Images/background.jpg";
 
 const BlogDetail = () => {

@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import jobsData from "../data/jobsData";
-import Hero2 from "../components/sections/Hero2";
+import Hero2 from "../Components/sections/Hero2";
 import jobImage from "../assets/Images/background.jpg";
 
 const JobDetail = () => {

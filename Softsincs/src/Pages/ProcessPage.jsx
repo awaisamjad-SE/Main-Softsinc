@@ -1,7 +1,7 @@
 import React from 'react';
-import Process from '../components/sections/Process';
-import Hero2 from '../components/sections/Hero2';
-import Faq from '../components/sections/Faq';
+import Process from '../Components/sections/Process';
+import Hero2 from '../Components/sections/Hero2';
+import Faq from '../Components/sections/Faq';
 import bgContact from '../assets/Images/background.jpg';
 
 const processFaqs = [

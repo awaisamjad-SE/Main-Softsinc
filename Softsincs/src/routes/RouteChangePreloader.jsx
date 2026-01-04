@@ -1,7 +1,7 @@
 // src/routes/RouteChangePreloader.jsx
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Preloader from '../components/sections/Preloader';
+import Preloader from '../Components/sections/Preloader';
 
 const RouteChangePreloader = () => {
   const location = useLocation();
