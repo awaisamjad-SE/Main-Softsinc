@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Ui/Button";
+import Button from "../../Components/Ui/Button";
 import { useNavigate } from "react-router-dom"; // Needed to handle internal navigation
 
 const Hero2 = ({
