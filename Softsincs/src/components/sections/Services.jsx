@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from '../ui/Card';
+import Card from '../Ui/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';

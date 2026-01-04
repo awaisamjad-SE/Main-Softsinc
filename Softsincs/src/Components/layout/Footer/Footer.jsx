@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../navbar/Logo";
+import Logo from "../Navbar/Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
