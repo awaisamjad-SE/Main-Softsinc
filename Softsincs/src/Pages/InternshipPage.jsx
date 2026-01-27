@@ -1,6 +1,6 @@
 // src/pages/InternshipPage.jsx
 import React from "react";
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 import Hero2 from "../components/sections/Hero2";
 import InternshipSection from "../components/sections/InternshipSection";
 import Faq from "../components/sections/Faq";

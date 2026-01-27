@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 import blogData from "../data/blogData";
 import { Link } from "react-router-dom";
 import Hero2 from "../components/sections/Hero2";

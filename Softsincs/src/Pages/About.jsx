@@ -1,4 +1,4 @@
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 import Hero2 from "../components/sections/Hero2";
 import bg1 from "../assets/Images/background.jpg";
 import AboutTimline from '../components/sections/AboutTimeline'; 

@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 import Hero2 from "../components/sections/Hero2";
 import bgEnterprises from "../assets/Images/background.jpg"; // ✅ Make sure this image exists
 import Services from "../components/sections/Services"; // Optional: reuse with filtered enterprise services

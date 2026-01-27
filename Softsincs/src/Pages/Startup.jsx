@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 import Hero2 from "../components/sections/Hero2";
 import bg1 from "../assets/Images/background.jpg"; // Use your startup hero bg
 import Services from "../components/sections/Services"; // Reuse for startup-focused services if needed

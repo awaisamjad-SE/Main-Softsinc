@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from '../Components/Common/SEO';
+import SEO from '../components/common/SEO';
 import Hero2 from "../components/sections/Hero2";
 import bgContact from "../assets/Images/background.jpg"; // Use your own contact background image
 import ContactSection from "../components/sections/ContactSection";
