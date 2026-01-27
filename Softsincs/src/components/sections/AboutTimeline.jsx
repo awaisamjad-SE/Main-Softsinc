@@ -1,28 +1,13 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import videoSrc from "../../assets/Images/hero2.mp4";
 import storyImage from "../../assets/Images/background.jpg";
 
 const AboutTimeline = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
   return (
     <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 text-gray-200 py-16 px-4 min-h-screen">
       <div className="max-w-6xl mx-auto text-center mb-12">
@@ -51,38 +36,11 @@ const AboutTimeline = () => {
             To make high-quality education accessible to all students, everywhere—using smart, scalable, and inclusive solutions.
           </p>
           <div className="relative mt-4 rounded-lg shadow-lg overflow-hidden">
-            <video
-              ref={videoRef}
-              src={videoSrc}
+            <img
+              src={storyImage}
+              alt="Our Story"
               className="w-full h-auto rounded-xl"
-              poster={storyImage} 
             />
-            <button
-              onClick={togglePlay}
-              className="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-40 hover:bg-opacity-60 transition"
-            >
-              {isPlaying ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-20 h-20"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 9v6m4-6v6" />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-20 h-20"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 3v18l15-9L5 3z" />
-                </svg>
-              )}
-            </button>
           </div>
         </VerticalTimelineElement>
 
