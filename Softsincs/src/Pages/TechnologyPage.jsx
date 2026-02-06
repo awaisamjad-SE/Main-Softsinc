@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import TechPageStack from "../components/sections/TechPageStack"; // adjust the path if needed
 import Hero2 from "../components/sections/Hero2";
 import imgtech from "../assets/Images/background.jpg";
@@ -31,6 +32,7 @@ const faqs = [
 const TechnologyPage = () => {
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="Technology Stack - Softsincs | Modern Development Tools & Frameworks"
         description="Discover the powerful technologies and frameworks we use at Softsincs including React, Node.js, Python, AI/ML tools, cloud platforms, and more to build cutting-edge software solutions."

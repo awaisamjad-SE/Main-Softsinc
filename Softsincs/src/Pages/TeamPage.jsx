@@ -2,6 +2,7 @@
 
 import React from 'react';
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import { Link } from 'react-router-dom';
 import teamData from '../data/teamData';
 import Hero2 from "../components/sections/Hero2"
@@ -11,6 +12,7 @@ import DevelopmentTeam from '../components/sections/DevelopmentTeam';
 const TeamPage = () => {
   return (
 <>
+      <AnimatedBackground />
       <SEO 
         title="Our Team - Softsincs | Meet Our Expert Development Team"
         description="Meet the talented team behind Softsincs. Our expert developers, designers, and technology leaders are passionate about creating innovative software solutions."

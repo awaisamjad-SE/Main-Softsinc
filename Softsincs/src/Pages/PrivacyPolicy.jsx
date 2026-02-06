@@ -1,11 +1,13 @@
 import React from 'react';
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Hero2 from '../components/sections/Hero2';
 import bg from '../assets/Images/background.jpg';
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="Privacy Policy - Softsincs | Your Data Protection & Privacy Rights"
         description="Read Softsincs' Privacy Policy to understand how we collect, use, and protect your personal information. Your privacy and data security are our top priorities."

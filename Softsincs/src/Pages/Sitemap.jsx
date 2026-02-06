@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Hero2 from '../components/sections/Hero2';
 import bg from '../assets/Images/background.jpg';
 
@@ -51,6 +52,7 @@ const Sitemap = () => {
 
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="Sitemap - Softsincs | Complete Website Navigation"
         description="Explore Softsincs' complete sitemap to easily navigate through all our pages including services, resources, company information, and legal documents."

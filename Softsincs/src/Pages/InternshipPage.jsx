@@ -1,6 +1,7 @@
 // src/pages/InternshipPage.jsx
 import React from "react";
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Hero2 from "../components/sections/Hero2";
 import InternshipSection from "../components/sections/InternshipSection";
 import Faq from "../components/sections/Faq";
@@ -10,6 +11,7 @@ import bgInternship from "../assets/Images/background.jpg"; // your own backgrou
 const InternshipPage = () => {
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="Internship Programs - Softsincs | Start Your Tech Career"
         description="Launch your career in software development with Softsincs internship programs. Gain hands-on experience, work on real projects, and learn from industry experts."

@@ -1,6 +1,7 @@
 // src/pages/InternshipDetail.jsx
 import React from "react";
 import { useParams } from "react-router-dom";
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import internshipsData from "../data/internshipsData";
 import Hero2 from "../components/sections/Hero2";
 import bg from "../assets/Images/background.jpg";
@@ -11,19 +12,23 @@ const InternshipDetail = () => {
 
   if (!internship) {
     return (
-      <Hero2
-        smallTitle="Internship Not Found"
-        title="Oops! Internship not found"
-        description="The internship you’re looking for does not exist or was removed."
-        backgroundImage={bg}
-        buttonText="Back to Internships"
-        buttonLink="/internships"
-      />
+      <>
+        <AnimatedBackground />
+        <Hero2
+          smallTitle="Internship Not Found"
+          title="Oops! Internship not found"
+          description="The internship you're looking for does not exist or was removed."
+          backgroundImage={bg}
+          buttonText="Back to Internships"
+          buttonLink="/internships"
+        />
+      </>
     );
   }
 
   return (
     <>
+      <AnimatedBackground />
       <Hero2
         smallTitle="Internship"
         title={internship.title}

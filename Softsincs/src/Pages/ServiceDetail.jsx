@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import servicesData from "../data/servicesData";
 import Hero2 from "../components/sections/Hero2";
 import bg1 from "../assets/Images/background.jpg";
@@ -29,6 +30,7 @@ function ServiceDetail() {
 
   return (
     <div className="scroll-smooth">
+      <AnimatedBackground />
       {/* Hero Banner */}
       <Hero2
         smallTitle="Our Services"

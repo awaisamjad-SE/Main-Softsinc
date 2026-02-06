@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Process from '../components/sections/Process';
 import Hero2 from '../components/sections/Hero2';
 import Faq from '../components/sections/Faq';
@@ -35,6 +36,7 @@ const processFaqs = [
 const ProcessPage = () => {
   return (
     <>
+      <AnimatedBackground />
       <Hero2
         smallTitle="Our Process"
         title="Let’s Build Something Great Together"

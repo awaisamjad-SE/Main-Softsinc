@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import teamData from '../data/teamData';
 import Hero2 from "../components/sections/Hero2";
 import bgContact from '../assets/Images/background.jpg';
@@ -11,6 +12,7 @@ const TeamDetail = () => {
   if (!member) {
     return (
 <>
+   <AnimatedBackground />
    <Hero2
         smallTitle="Team Details"
         title="Let's Connect and Collaborate"
@@ -32,6 +34,7 @@ const TeamDetail = () => {
 
   return (
     <>
+      <AnimatedBackground />
       <Hero2
         smallTitle="Team Details"
         title="Let's Connect and Collaborate"

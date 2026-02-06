@@ -1,6 +1,7 @@
 // src/pages/JobDetail.jsx
 import React from "react";
 import { useParams } from "react-router-dom";
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import jobsData from "../data/jobsData";
 import Hero2 from "../components/sections/Hero2";
 import jobImage from "../assets/Images/background.jpg";
@@ -13,6 +14,7 @@ const JobDetail = () => {
   if (!job) {
     return (
       <>
+        <AnimatedBackground />
         <Hero2
           smallTitle="404"
           title="Job Not Found"
@@ -31,6 +33,7 @@ const JobDetail = () => {
   // ✅ Job Found
   return (
     <>
+      <AnimatedBackground />
       <Hero2
         smallTitle="Apply Now"
         title={job.title}

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import SEO from '../components/common/SEO';
 
 const NotFound = () => {
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="404 - Page Not Found | Softsincs"
         description="The page you are looking for cannot be found. Return to Softsincs homepage to explore our software development services."

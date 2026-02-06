@@ -1,4 +1,5 @@
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Hero2 from "../components/sections/Hero2";
 import bg1 from "../assets/Images/background.jpg";
 import AboutTimline from '../components/sections/AboutTimeline'; 
@@ -8,6 +9,7 @@ import Leadership from '../components/sections/Leadership';
 const About = () => {
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="About Us - Softsincs | Expert Software Development Team"
         description="Learn about Softsincs, a passionate team of software developers dedicated to delivering excellence. Discover our mission, values, and the expertise that drives innovation in every project."

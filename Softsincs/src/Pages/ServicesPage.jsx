@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Services from "../components/sections/Services";
 import Hero2 from "../components/sections/Hero2";
 import bgServices from "../assets/Images/background.jpg"; // ✅ Use a relevant image
@@ -8,6 +9,7 @@ import ContactSection from "../components/sections/ContactSection";
 const ServicesPage = () => {
   return (
     <div>
+      <AnimatedBackground />
       <SEO 
         title="Our Services - Softsincs | Web, Mobile & AI Development Solutions"
         description="Explore Softsincs' comprehensive software development services including custom web applications, mobile apps, AI solutions, cloud services, and enterprise software. Get expert digital transformation services."

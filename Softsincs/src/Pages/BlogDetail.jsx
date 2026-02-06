@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import blogData from "../data/blogData";
 import Hero2 from "../components/sections/Hero2";
 import bgContact from "../assets/Images/background.jpg";
@@ -25,6 +26,7 @@ const BlogDetail = () => {
 
   return (
     <>
+      <AnimatedBackground />
       <Hero2
         smallTitle="Blogs"
         title={blog.title}

@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import blogData from "../data/blogData";
 import { Link } from "react-router-dom";
 import Hero2 from "../components/sections/Hero2";
@@ -15,6 +16,7 @@ const BlogPage = () => {
 
   return (
     <>
+      <AnimatedBackground />
       <SEO 
         title="Blog - Softsincs | Tech Insights, Tutorials & Industry Updates"
         description="Read the latest articles from Softsincs covering software development, AI, cloud computing, best practices, and technology trends. Expert insights to help your business grow."

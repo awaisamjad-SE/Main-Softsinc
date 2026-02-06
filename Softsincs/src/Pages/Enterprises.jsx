@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from '../components/common/SEO';
+import AnimatedBackground from '../components/common/AnimatedBackground';
 import Hero2 from "../components/sections/Hero2";
 import bgEnterprises from "../assets/Images/background.jpg"; // ✅ Make sure this image exists
 import Services from "../components/sections/Services"; // Optional: reuse with filtered enterprise services
@@ -9,6 +10,7 @@ import ContactSection from "../components/sections/ContactSection";
 const EnterprisesPage = () => {
   return (
     <div>
+      <AnimatedBackground />
       <SEO 
         title="Enterprise Solutions - Softsincs | Scalable Digital Transformation"
         description="Empower your enterprise with Softsincs' scalable software solutions. We provide cloud infrastructure, system integration, AI automation, and enterprise-grade security."
