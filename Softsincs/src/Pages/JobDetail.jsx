@@ -23,7 +23,7 @@ const JobDetail = () => {
           buttonText="Back to Careers"
           buttonLink="/careers"
         />
-        <div className="text-center py-20 text-red-600 text-xl font-semibold">
+        <div className="text-center py-20 text-black text-xl font-semibold">
           No job was found with the given URL.
         </div>
       </>
@@ -44,7 +44,7 @@ const JobDetail = () => {
       />
 
       <div className="max-w-4xl mx-auto px-6 py-20">
-        <h1 className="text-4xl font-bold text-indigo-800 mb-4">{job.title}</h1>
+        <h1 className="text-4xl font-bold text-black mb-4">{job.title}</h1>
         <div className="text-gray-600 mb-6">
           <p><strong>Type:</strong> {job.type}</p>
           <p><strong>Location:</strong> {job.location}</p>
@@ -55,7 +55,7 @@ const JobDetail = () => {
 
         {job.responsibilities && (
           <>
-            <h2 className="text-xl font-semibold text-indigo-700 mt-6 mb-2">Responsibilities</h2>
+            <h2 className="text-xl font-semibold text-black mt-6 mb-2">Responsibilities</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               {job.responsibilities.map((res, idx) => (
                 <li key={idx}>{res}</li>
@@ -66,7 +66,7 @@ const JobDetail = () => {
 
         {job.requirements && (
           <>
-            <h2 className="text-xl font-semibold text-indigo-700 mt-6 mb-2">Requirements</h2>
+            <h2 className="text-xl font-semibold text-black mt-6 mb-2">Requirements</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               {job.requirements.map((req, idx) => (
                 <li key={idx}>{req}</li>
@@ -94,7 +94,7 @@ const JobDetail = () => {
               </p>
               <a
                 href="mailto:softsincs@gmail.com"
-                className="text-indigo-600 font-semibold hover:underline"
+                className="text-black font-semibold hover:underline"
               >
                 softsincs@gmail.com
               </a>

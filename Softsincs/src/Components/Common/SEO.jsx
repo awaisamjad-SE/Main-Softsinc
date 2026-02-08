@@ -57,8 +57,8 @@ const SEO = ({
     setMetaTag('name', 'twitter:image', image);
 
     // Additional meta tags
-    setMetaTag('name', 'theme-color', '#7c3aed');
-    setMetaTag('name', 'msapplication-TileColor', '#7c3aed');
+    setMetaTag('name', 'theme-color', '#ffffff');
+    setMetaTag('name', 'msapplication-TileColor', '#ffffff');
 
     // Canonical link
     let canonical = document.querySelector('link[rel="canonical"]');

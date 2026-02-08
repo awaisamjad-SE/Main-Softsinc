@@ -10,21 +10,21 @@ const Faq = ({ title = "Frequently Asked Questions", description = "", faqs = []
   return (
     <section className="bg-white py-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-indigo-700 mb-4">{title}</h2>
+        <h2 className="text-3xl font-bold text-black mb-4">{title}</h2>
         {description && <p className="text-gray-600 mb-10">{description}</p>}
 
         <div className="space-y-4 text-left">
           {faqs.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg shadow-md transition"
+              className="bg-white border border-black rounded-lg shadow-md transition hover:shadow-lg"
             >
               <button
                 className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="font-medium text-indigo-800">{item.question}</span>
-                <span className="text-indigo-600 text-2xl">
+                <span className="font-medium text-black">{item.question}</span>
+                <span className="text-black text-2xl">
                   {openIndex === index ? '−' : '+'}
                 </span>
               </button>

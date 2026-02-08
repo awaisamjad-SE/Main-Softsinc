@@ -29,7 +29,7 @@ const MenuItem = ({ title, links }) => {
     <div ref={ref} className="relative group cursor-pointer">
       <button
         className={`flex items-center gap-1 focus:outline-none transition-colors duration-300 ${
-          scrolled ? 'text-[#2e35d7]' : 'text-white'
+          'text-black'
         } hover:text-blue-300`}
         onClick={() => setOpen(!open)}
         type="button"

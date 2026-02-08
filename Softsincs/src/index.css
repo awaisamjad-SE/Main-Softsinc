@@ -24,29 +24,27 @@
 @layer components {
   /* Button Styles */
   .btn-primary {
-    @apply bg-gradient-purple text-white px-6 py-3 rounded-lg font-semibold 
-           hover:shadow-glow transition-all duration-300 transform hover:scale-105;
+    @apply bg-white text-black border border-black px-6 py-3 rounded-lg font-semibold 
+           hover:bg-black hover:text-white transition-all duration-300;
   }
   
   .btn-secondary {
-    @apply bg-gradient-blue text-white px-6 py-3 rounded-lg font-semibold 
-           hover:shadow-glow transition-all duration-300 transform hover:scale-105;
+    @apply bg-white text-black border border-black px-6 py-3 rounded-lg font-semibold 
+           hover:bg-black hover:text-white transition-all duration-300;
   }
   
   .btn-outline {
-    @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold 
-           hover:bg-primary-600 hover:text-white transition-all duration-300;
+    @apply border-2 border-black text-black px-6 py-3 rounded-lg font-semibold 
+           hover:bg-black hover:text-white transition-all duration-300;
   }
   
   /* Card Styles */
   .card {
-    @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-glow transition-all duration-300 
-           transform hover:-translate-y-1;
+    @apply bg-white rounded-lg border border-black p-6 hover:shadow-lg transition-all duration-300;
   }
   
   .card-gradient {
-    @apply bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg shadow-lg p-6 
-           hover:shadow-glow transition-all duration-300 transform hover:-translate-y-1;
+    @apply bg-white rounded-lg border border-black p-6 hover:shadow-lg transition-all duration-300;
   }
   
   /* Section Padding */
@@ -65,29 +63,29 @@
   
   /* Headings */
   .heading-1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight;
   }
   
   .heading-2 {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight;
   }
   
   .heading-3 {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900;
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-black;
   }
   
   /* Text Gradient */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-purple;
+    @apply text-black;
   }
   
   .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-blue;
+    @apply text-black;
   }
   
   /* Loading Skeleton */
   .skeleton {
-    @apply bg-gray-200 animate-pulse rounded;
+    @apply bg-gray-100 animate-pulse rounded;
   }
 }
 
@@ -120,7 +118,7 @@
   
   /* Custom Gradient Background */
   .bg-gradient-mesh {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 100%);
+    background: #000000;
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
   }

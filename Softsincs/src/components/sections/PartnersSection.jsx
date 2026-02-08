@@ -7,12 +7,12 @@ const PartnersSection = () => {
     return (
 
         <>
-            <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 py-16">
+            <section className="bg-white py-16">
                 <div className="max-w-7xl mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-bold text-white mb-4">
-                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Partners</span>
+                    <h2 className="text-4xl font-bold text-black mb-4">
+                        Our <span className="text-black">Partners</span>
                     </h2>
-                    <p className="text-gray-300 mb-10">
+                    <p className="text-black mb-10">
                         We’re proud to collaborate with visionary companies, tools, and institutions who share our mission to transform education.
                     </p>
 
@@ -24,17 +24,17 @@ const PartnersSection = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-gradient-to-br from-gray-800 via-gray-900 to-indigo-900 py-16">
+            <section className="bg-white py-16 border-t border-black">
                 <div className="max-w-4xl mx-auto text-center px-6">
-                    <h2 className="text-3xl font-bold text-white mb-4">
+                    <h2 className="text-3xl font-bold text-black mb-4">
                         Ready to be part of our story?
                     </h2>
-                    <p className="text-gray-300 text-lg mb-6">
+                    <p className="text-black text-lg mb-6">
                         Join us on our mission to transform education. Whether you're a student, educator, or enthusiast—we'd love to hear from you.
                     </p>
                     <a
                         href="/contact"
-                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition duration-300 shadow-lg"
+                        className="inline-flex items-center px-6 py-3 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-600 transition duration-300 shadow-lg"
                     >
                         Contact Us
                         <svg

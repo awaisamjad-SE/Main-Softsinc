@@ -31,7 +31,7 @@ const StartupPage = () => {
 
       {/* Optional: Why Startups Choose Us Section */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-8 text-[#2e35d7]">Why Startups Choose Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-black">Why Startups Choose Us</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { icon: "fas fa-rocket", title: "Quick MVP Delivery" },
@@ -40,7 +40,7 @@ const StartupPage = () => {
             { icon: "fas fa-chart-line", title: "Launch & Scale" },
           ].map((item, idx) => (
             <div key={idx} className="p-6 bg-white shadow rounded text-center">
-              <i className={`${item.icon} text-3xl text-[#2e35d7] mb-3`}></i>
+              <i className={`${item.icon} text-3xl text-black mb-3`}></i>
               <h3 className="font-semibold">{item.title}</h3>
             </div>
           ))}

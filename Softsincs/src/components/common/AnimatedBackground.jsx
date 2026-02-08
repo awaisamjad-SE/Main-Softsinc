@@ -3,34 +3,38 @@ import React, { useEffect, useState } from "react";
 const AnimatedBackground = () => {
   const [currentWord, setCurrentWord] = useState(0);
   
+  // Only 10 key tech words
   const techWords = [
-    "AI & Machine Learning",
-    "Cloud Computing",
-    "Blockchain",
-    "Mobile Apps",
-    "Web Development",
-    "DevOps",
-    "Cybersecurity",
-    "IoT Solutions",
-    "Data Analytics",
-    "API Development",
-    "React & Angular",
-    "Node.js",
-    "Python & Django",
-    "Docker & Kubernetes",
-    "AWS & Azure",
-    "MongoDB & SQL",
-    "GraphQL & REST",
-    "TypeScript",
-    "Microservices",
-    "Agile & Scrum"
+    "Innovation",
+    "Development",
+    "Technology",
+    "Solutions",
+    "AI & ML",
+    "Cloud",
+    "Security",
+    "Mobile",
+    "Analytics",
+    "Design"
+  ];
+
+  // Fixed positions for each word to avoid overlap
+  const wordPositions = [
+    { top: '15%', left: '10%', rotate: -12 },
+    { top: '25%', left: '75%', rotate: 8 },
+    { top: '45%', left: '15%', rotate: -8 },
+    { top: '60%', left: '70%', rotate: 10 },
+    { top: '75%', left: '20%', rotate: -10 },
+    { top: '20%', left: '45%', rotate: 6 },
+    { top: '70%', left: '50%', rotate: -7 },
+    { top: '35%', left: '85%', rotate: 9 },
+    { top: '55%', left: '40%', rotate: -9 },
+    { top: '85%', left: '65%', rotate: 11 }
   ];
 
   useEffect(() => {
-    // Animate tech words - faster animation
     const interval = setInterval(() => {
       setCurrentWord((prev) => (prev + 1) % techWords.length);
-    }, 1200);
+    }, 2500);
     
     return () => clearInterval(interval);
   }, []);
@@ -39,32 +43,32 @@ const AnimatedBackground = () => {
     <>
       {/* Animated Tech Words Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute inset-0 flex flex-wrap items-center justify-around gap-8 p-8">
+        <div className="absolute inset-0">
           {techWords.map((word, index) => {
             const isActive = index === currentWord;
             const isPrevious = index === (currentWord - 1 + techWords.length) % techWords.length;
             const isNext = index === (currentWord + 1) % techWords.length;
             
             let opacity = 'opacity-[0.03]';
-            let scale = 'scale-100';
+            let scale = 'scale-95';
             
             if (isActive) {
-              opacity = 'opacity-[0.50]';
-              scale = 'scale-110';
+              opacity = 'opacity-[0.10]';
+              scale = 'scale-100';
             } else if (isPrevious || isNext) {
-              opacity = 'opacity-[0.50]';
-              scale = 'scale-105';
+              opacity = 'opacity-[0.0]';
+              scale = 'scale-98';
             }
             
             return (
               <div
                 key={index}
-                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-600 transition-all duration-700 ${opacity} ${scale}`}
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black transition-all duration-1000 ease-in-out ${opacity} ${scale}`}
                 style={{
                   position: 'absolute',
-                  top: `${(index * 10) % 80 + 10}%`,
-                  left: `${(index * 15) % 80 + 10}%`,
-                  transform: `rotate(${(index % 2 === 0 ? -15 : 15)}deg)`,
+                  top: wordPositions[index].top,
+                  left: wordPositions[index].left,
+                  transform: `rotate(${wordPositions[index].rotate}deg)`,
                 }}
               >
                 {word}
@@ -73,9 +77,6 @@ const AnimatedBackground = () => {
           })}
         </div>
       </div>
-
-      {/* Gradient Overlay for Depth */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-b from-transparent via-gray-900/30 to-gray-900/50"></div>
     </>
   );
 };

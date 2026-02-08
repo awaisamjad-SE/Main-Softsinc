@@ -21,7 +21,7 @@ function ServiceDetail() {
           buttonLink="/"
           backgroundImage={bgServices}
         />
-        <div className="text-center py-20 text-red-600 font-semibold text-xl">
+        <div className="text-center py-20 text-black font-semibold text-xl">
           Service not found
         </div>
       </>
@@ -45,7 +45,7 @@ function ServiceDetail() {
 
         {/* Title & Description */}
         <section className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2e35d7] mb-4">{service.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-4">{service.title}</h1>
           <p className="text-lg text-gray-700 leading-relaxed">{service.description}</p>
         </section>
 
@@ -64,7 +64,7 @@ function ServiceDetail() {
             <ul className="grid md:grid-cols-2 gap-4 text-gray-800 list-disc list-inside">
               {service.benefits.map((item, i) => (
                 <li key={i} className="flex gap-2 items-start">
-                  <svg className="w-5 h-5 mt-1 text-green-500" fill="none" stroke="currentColor" strokeWidth="2"
+                  <svg className="w-5 h-5 mt-1 text-black" fill="none" stroke="currentColor" strokeWidth="2"
                     viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                   <span>{item}</span>
                 </li>
@@ -80,7 +80,7 @@ function ServiceDetail() {
             <div className="grid md:grid-cols-3 gap-6">
               {service.features.map((feature, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
-                  <div className="text-3xl text-[#2e35d7] mb-3">
+                  <div className="text-3xl text-black mb-3">
                     {feature.icon ? <i className={feature.icon}></i> : <i className="fas fa-star"></i>}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{feature.label}</h3>
@@ -92,12 +92,12 @@ function ServiceDetail() {
 <Process/>
         {/* CTA */}
         <div className="text-center mt-12 bg-white py-12 rounded-lg shadow-inner">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#2e35d7]">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
             Ready to take the next step?
           </h3>
           <Link
             to="/contact"
-            className="inline-block bg-[#2e35d7] hover:bg-blue-800 text-white px-8 py-3 rounded-full font-semibold transition"
+            className="inline-block bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full font-semibold transition"
           >
             Contact Us
           </Link>

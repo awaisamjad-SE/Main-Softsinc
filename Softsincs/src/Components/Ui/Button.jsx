@@ -8,9 +8,9 @@ const Button = ({ text, variant = 'primary', onClick }) => {
 
   const styles = {
     primary:
-      'bg-[#2e35d7] text-white hover:bg-white hover:text-[#2e35d7] hover:border-2 hover:border-[#2e35d7] border shadow-lg',
+      'bg-black text-white hover:bg-white hover:text-black hover:border-2 hover:border-black border shadow-lg',
     secondary:
-      'bg-white text-[#2e35d7] border-2  hover:bg-[#2e35d7] hover:text-white shadow-lg',
+      'bg-white text-black border-2 border-black hover:bg-black hover:text-white shadow-lg',
   };
 
   return (

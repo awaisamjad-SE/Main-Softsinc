@@ -11,11 +11,11 @@ function Services() {
   const visibleCards = showAll ? servicesData : servicesData.slice(0, 4);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 py-12 px-4">
+    <div className="bg-white py-12 px-4">
       {/* Section Heading */}
       <div className="mb-10 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Services</span></h2>
-        <p className="mt-2 text-lg text-gray-300">Transform Your Business</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-black">Our <span className="text-black">Services</span></h2>
+        <p className="mt-2 text-lg text-black">Transform Your Business</p>
       </div>
 
       {/* Mobile & Tablet: Swiper */}
@@ -49,11 +49,11 @@ function Services() {
               text-align: center;
             }
             .swiper-pagination-bullet {
-              background: #2e35d7 !important;
+              background: #000000 !important;
               opacity: 1;
             }
             .swiper-pagination-bullet-active {
-              background: #000 !important;
+              background: #666666 !important;
             }
           `}
         </style>
@@ -76,7 +76,7 @@ function Services() {
       <div className="hidden mt-12 text-center lg:block">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-full transition shadow-lg hover:shadow-xl"
+          className="bg-black hover:bg-gray-600 text-white px-6 py-2 rounded-full transition shadow-lg hover:shadow-xl"
         >
           {showAll ? 'View Less' : 'Show More'}
         </button>

@@ -42,7 +42,7 @@ export default function Dashboard() {
         <button onClick={fetchAnalytics} className="bg-blue-600 text-white px-4 py-2 rounded">Load</button>
       </div>
 
-      {error && <p className="text-red-600">{error}</p>}
+      {error && <p className="text-black">{error}</p>}
 
       {analytics.length > 0 && (
         <>

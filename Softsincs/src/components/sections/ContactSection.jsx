@@ -93,23 +93,23 @@ Message: ${formData.message}
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 relative overflow-hidden">
+    <section className="py-20 bg-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gray-200 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-200 rounded-full blur-3xl opacity-20"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-purple-900 bg-opacity-50 text-purple-300 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-semibold mb-4">
             📧 Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Connect</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Let's <span className="text-black">Connect</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
@@ -118,36 +118,36 @@ Message: ${formData.message}
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Info Card */}
-            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-700 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-              <p className="text-gray-300 mb-8">
+            <div className="bg-white border border-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-2xl font-bold text-black mb-6">Contact Information</h3>
+              <p className="text-black mb-8">
                 Fill out our contact form and we'll get back to you within 24 hours. Let's discuss how we can help bring your ideas to life.
               </p>
 
               <div className="space-y-6">
                 {/* Location */}
                 <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                  <div className="flex-shrink-0 w-12 h-12 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-white">Office Location</h4>
-                    <p className="text-gray-300 mt-1">Ghirnatah, Dammam, Saudi Arabia</p>
+                    <h4 className="text-lg font-semibold text-black">Office Location</h4>
+                    <p className="text-black mt-1">Ghirnatah, Dammam, Saudi Arabia</p>
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                  <div className="flex-shrink-0 w-12 h-12 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.15a1 1 0 01.99.83l.74 4.43a1 1 0 01-.54 1.06l-1.55.77a11.03 11.03 0 006.1 6.1l.77-1.55a1 1 0 011.06-.54l4.43.74a1 1 0 01.83.99V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-white">Phone Number</h4>
-                    <a href="tel:+966152255365" className="text-pink-400 hover:text-pink-300 mt-1 block font-medium transition-colors">
+                    <h4 className="text-lg font-semibold text-black">Phone Number</h4>
+                    <a href="tel:+966152255365" className="text-black hover:text-gray-600 mt-1 block font-medium transition-colors">
                       +966 1 5225 5365
                     </a>
                   </div>
@@ -155,15 +155,15 @@ Message: ${formData.message}
 
                 {/* Email */}
                 <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                  <div className="flex-shrink-0 w-12 h-12 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-white">Email Address</h4>
-                    <a href="mailto:support@softsincs.com" className="text-indigo-400 hover:text-indigo-300 mt-1 block font-medium transition-colors">
+                    <h4 className="text-lg font-semibold text-black">Email Address</h4>
+                    <a href="mailto:support@softsincs.com" className="text-black hover:text-gray-600 mt-1 block font-medium transition-colors">
                       support@softsincs.com
                     </a>
                   </div>
@@ -172,7 +172,7 @@ Message: ${formData.message}
             </div>
 
             {/* Business Hours */}
-            <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-8 shadow-lg text-white">
+            <div className="bg-black rounded-2xl p-8 shadow-lg text-white">
               <h3 className="text-xl font-bold mb-4">Business Hours</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
@@ -191,20 +191,20 @@ Message: ${formData.message}
             </div>
 
             {/* Social Links */}
-            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-700">
-              <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
+            <div className="bg-white border border-black rounded-2xl p-8 shadow-lg">
+              <h3 className="text-xl font-bold text-black mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="https://facebook.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                <a href="https://facebook.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg hover:bg-gray-600">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                   </svg>
                 </a>
-                <a href="https://twitter.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-500 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                <a href="https://twitter.com/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg hover:bg-gray-600">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 8.09v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                   </svg>
                 </a>
-                <a href="https://linkedin.com/company/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                <a href="https://linkedin.com/company/softsincs" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg hover:bg-gray-600">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
                     <rect x="2" y="9" width="4" height="12"/>
@@ -217,29 +217,29 @@ Message: ${formData.message}
 
           {/* Contact Form */}
           <div className="lg:sticky lg:top-24">
-            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700">
-              <h3 className="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+            <div className="bg-white border border-black rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-black mb-6">Send Us a Message</h3>
               
               {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start animate-fade-in">
-                  <svg className="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <div className="mb-6 p-4 bg-white border border-black rounded-xl flex items-start animate-fade-in">
+                  <svg className="w-6 h-6 text-black mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div>
-                    <h4 className="text-green-800 font-semibold mb-1">Message Sent Successfully!</h4>
-                    <p className="text-green-700 text-sm">Your default email client should open. If not, please email us directly at support@softsincs.com</p>
+                    <h4 className="text-black font-semibold mb-1">Message Sent Successfully!</h4>
+                    <p className="text-black text-sm">Your default email client should open. If not, please email us directly at support@softsincs.com</p>
                   </div>
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start animate-fade-in">
-                  <svg className="w-6 h-6 text-red-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <div className="mb-6 p-4 bg-white border border-black rounded-xl flex items-start animate-fade-in">
+                  <svg className="w-6 h-6 text-black mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                   </svg>
                   <div>
-                    <h4 className="text-red-800 font-semibold mb-1">Oops! Something went wrong</h4>
-                    <p className="text-red-700 text-sm">Please try again or email us directly at support@softsincs.com</p>
+                    <h4 className="text-black font-semibold mb-1">Oops! Something went wrong</h4>
+                    <p className="text-black text-sm">Please try again or email us directly at support@softsincs.com</p>
                   </div>
                 </div>
               )}
@@ -247,8 +247,8 @@ Message: ${formData.message}
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-200 mb-2">
-                    Full Name <span className="text-red-400">*</span>
+                  <label htmlFor="name" className="block text-sm font-semibold text-black mb-2">
+                    Full Name <span className="text-black">*</span>
                   </label>
                   <input
                     type="text"
@@ -257,12 +257,12 @@ Message: ${formData.message}
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className={`w-full px-4 py-3 bg-gray-700 text-white border ${
-                      errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-purple-500"
+                    className={`w-full px-4 py-3 bg-white text-black border ${
+                      errors.name ? "border-red-500 focus:ring-red-500" : "border-black focus:ring-black"
                     } rounded-xl focus:outline-none focus:ring-2 transition-all placeholder-gray-400`}
                   />
                   {errors.name && (
-                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                    <p className="mt-2 text-sm text-black flex items-center">
                       <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
@@ -273,8 +273,8 @@ Message: ${formData.message}
 
                 {/* Email Field */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-200 mb-2">
-                    Email Address <span className="text-red-400">*</span>
+                  <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
+                    Email Address <span className="text-black">*</span>
                   </label>
                   <input
                     type="email"
@@ -283,12 +283,12 @@ Message: ${formData.message}
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className={`w-full px-4 py-3 bg-gray-700 text-white border ${
-                      errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-purple-500"
+                    className={`w-full px-4 py-3 bg-white text-black border ${
+                      errors.email ? "border-red-500 focus:ring-red-500" : "border-black focus:ring-black"
                     } rounded-xl focus:outline-none focus:ring-2 transition-all placeholder-gray-400`}
                   />
                   {errors.email && (
-                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                    <p className="mt-2 text-sm text-black flex items-center">
                       <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
@@ -299,8 +299,8 @@ Message: ${formData.message}
 
                 {/* Message Field */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-200 mb-2">
-                    Your Message <span className="text-red-400">*</span>
+                  <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
+                    Your Message <span className="text-black">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -309,12 +309,12 @@ Message: ${formData.message}
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project..."
-                    className={`w-full px-4 py-3 bg-gray-700 text-white border ${
-                      errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-purple-500"
+                    className={`w-full px-4 py-3 bg-white text-black border ${
+                      errors.message ? "border-red-500 focus:ring-red-500" : "border-black focus:ring-black"
                     } rounded-xl focus:outline-none focus:ring-2 transition-all resize-none placeholder-gray-400`}
                   ></textarea>
                   {errors.message && (
-                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                    <p className="mt-2 text-sm text-black flex items-center">
                       <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
@@ -330,7 +330,7 @@ Message: ${formData.message}
                   className={`w-full py-4 px-6 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 ${
                     isSubmitting
                       ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl"
+                      : "bg-black hover:bg-gray-600 shadow-lg hover:shadow-xl"
                   }`}
                 >
                   {isSubmitting ? (

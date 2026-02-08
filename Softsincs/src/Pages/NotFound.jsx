@@ -97,19 +97,19 @@ const NotFound = () => {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <p className="text-sm text-gray-600 mb-4">You might be looking for:</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/services" className="text-primary-600 hover:text-primary-800 text-sm font-medium">
+              <Link to="/services" className="text-black hover:text-gray-800 text-sm font-medium">
                 Services
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link to="/about" className="text-primary-600 hover:text-primary-800 text-sm font-medium">
+              <span className="text-black">•</span>
+              <Link to="/about" className="text-black hover:text-gray-800 text-sm font-medium">
                 About Us
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link to="/careers" className="text-primary-600 hover:text-primary-800 text-sm font-medium">
+              <span className="text-black">•</span>
+              <Link to="/careers" className="text-black hover:text-gray-800 text-sm font-medium">
                 Careers
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link to="/blog" className="text-primary-600 hover:text-primary-800 text-sm font-medium">
+              <span className="text-black">•</span>
+              <Link to="/blog" className="text-black hover:text-gray-800 text-sm font-medium">
                 Blog
               </Link>
             </div>

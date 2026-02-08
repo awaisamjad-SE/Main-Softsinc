@@ -51,7 +51,7 @@ const TechnologyPage = () => {
       <TechPageStack />
 
       <section className="max-w-7xl mx-auto px-6 py-20" id="faq">
-        <h2 className="text-3xl font-extrabold text-indigo-900 mb-8 text-center">
+        <h2 className="text-3xl font-extrabold text-black mb-8 text-center">
           Frequently Asked Questions
         </h2>
         <Faq faqs={faqs} /> {/* ✅ Match import name */}

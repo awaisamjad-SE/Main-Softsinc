@@ -82,7 +82,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 text-gray-300">
+    <footer className="bg-white text-black border-t border-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
@@ -90,17 +90,17 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Logo />
-              <span className="text-2xl font-bold text-white">Softsincs</span>
+              <span className="text-2xl font-bold text-black">Softsincs</span>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Softsinc Technologies</h3>
-            <p className="text-gray-400 mb-6 max-w-sm">
+            <h3 className="text-xl font-semibold text-black mb-3">Softsinc Technologies</h3>
+            <p className="text-black mb-6 max-w-sm">
               Building innovative tech solutions that lead the industry and deliver exceptional value to our clients worldwide.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 text-black mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-sm">Ghirnatah, Dammam, Saudi Arabia</span>
@@ -111,16 +111,16 @@ const Footer = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <a href="mailto:support@softsincs.com" className="text-sm hover:text-purple-400 transition-colors">
+                <a href="mailto:support@softsincs.com" className="text-sm hover:text-gray-600 transition-colors">
                   support@softsincs.com
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 text-black flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.15a1 1 0 01.99.83l.74 4.43a1 1 0 01-.54 1.06l-1.55.77a11.03 11.03 0 006.1 6.1l.77-1.55a1 1 0 011.06-.54l4.43.74a1 1 0 01.83.99V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <a href="tel:+966152255365" className="text-sm hover:text-purple-400 transition-colors">
+                <a href="tel:+966152255365" className="text-sm hover:text-gray-600 transition-colors">
                   +966 1 5225 5365
                 </a>
               </div>
@@ -129,13 +129,13 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-4">Company</h4>
+            <h4 className="text-black font-semibold text-lg mb-4">Company</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm block"
+                    className="text-black hover:text-gray-600 transition-colors text-sm block"
                   >
                     {link.name}
                   </Link>
@@ -146,13 +146,13 @@ const Footer = () => {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-4">Services</h4>
+            <h4 className="text-black font-semibold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm block"
+                    className="text-black hover:text-gray-600 transition-colors text-sm block"
                   >
                     {link.name}
                   </Link>
@@ -163,13 +163,13 @@ const Footer = () => {
 
           {/* Resources Links */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-4">Resources</h4>
+            <h4 className="text-black font-semibold text-lg mb-4">Resources</h4>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm block"
+                    className="text-black hover:text-gray-600 transition-colors text-sm block"
                   >
                     {link.name}
                   </Link>
@@ -180,30 +180,30 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        <div className="border-t border-black my-8"></div>
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Copyright */}
           <div className="text-center md:text-left">
-            <p className="text-sm text-gray-400">
-              © {currentYear} <span className="text-white font-semibold">Softsinc Technologies</span>. All Rights Reserved.
+            <p className="text-sm text-black">
+              © {currentYear} <span className="text-black font-semibold">Softsinc Technologies</span>. All Rights Reserved.
             </p>
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-black mt-1">
               Empowering Digital Innovation Since 2020
             </p>
           </div>
 
           {/* Social Links */}
           <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-400 mr-2">Follow us:</span>
+            <span className="text-sm text-black mr-2">Follow us:</span>
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                className="w-10 h-10 bg-white border border-black hover:bg-black text-black hover:text-white rounded-lg flex items-center justify-center transition-all duration-300"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -213,29 +213,29 @@ const Footer = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-8 pt-6 border-t border-gray-700">
-          <div className="flex flex-wrap justify-center gap-6 text-xs text-gray-500">
+        <div className="mt-8 pt-6 border-t border-black">
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-black">
             <span className="flex items-center">
-              <svg className="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-black mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Trusted by 50+ Clients Worldwide
             </span>
             <span className="flex items-center">
-              <svg className="w-4 h-4 text-blue-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-black mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
                 <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
               </svg>
               100+ Projects Delivered
             </span>
             <span className="flex items-center">
-              <svg className="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-black mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
               </svg>
               98% Client Satisfaction
             </span>
             <span className="flex items-center">
-              <svg className="w-4 h-4 text-purple-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-black mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
               </svg>
               24/7 Support Available

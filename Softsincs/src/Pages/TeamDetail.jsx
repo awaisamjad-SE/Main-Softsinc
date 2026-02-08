@@ -22,7 +22,7 @@ const TeamDetail = () => {
         backgroundImage={bgContact}
       />
 <div className="min-h-screen flex flex-col justify-center items-center p-8 bg-white">
-        <h1 className="text-3xl font-bold text-red-600 mb-4">Team member not found</h1>
+        <h1 className="text-3xl font-bold text-black mb-4">Team member not found</h1>
         <Link to="/team" className="text-blue-600 hover:underline text-lg">
           ← Back to Team
         </Link>
@@ -47,7 +47,7 @@ const TeamDetail = () => {
       <main className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
         <div className="bg-white shadow-2xl rounded-3xl overflow-hidden flex flex-col md:flex-row md:items-center md:space-x-12 p-8 md:p-12">
           {/* Member Image */}
-          <div className="flex-shrink-0 mx-auto md:mx-0 mb-8 md:mb-0 w-48 h-48 rounded-full overflow-hidden shadow-lg ring-4 ring-indigo-500 dark:ring-indigo-400">
+          <div className="flex-shrink-0 mx-auto md:mx-0 mb-8 md:mb-0 w-48 h-48 rounded-full overflow-hidden shadow-lg ring-4 ring-black">
             <img
               src={member.image}
               alt={member.name}
@@ -58,19 +58,19 @@ const TeamDetail = () => {
 
           {/* Member Info */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">{member.name}</h1>
-            <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-lg mb-4">{member.role}</p>
+            <h1 className="text-4xl font-extrabold text-black mb-2">{member.name}</h1>
+            <p className="text-black font-semibold text-lg mb-4">{member.role}</p>
 
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">{member.bio}</p>
 
             {/* Skills */}
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Skills</h2>
+              <h2 className="text-2xl font-semibold text-black mb-3">Skills</h2>
               <ul className="flex flex-wrap gap-3 justify-center md:justify-start">
                 {member.skills.map(skill => (
                   <li
                     key={skill}
-                    className="bg-indigo-100 dark:bg-indigo-700 text-indigo-800 dark:text-indigo-200 px-4 py-1 rounded-full text-sm font-medium shadow-sm"
+                    className="bg-white border border-black text-black px-4 py-1 rounded-full text-sm font-medium shadow-sm"
                   >
                     {skill}
                   </li>
@@ -139,7 +139,7 @@ const TeamDetail = () => {
             <div className="mt-10">
               <Link
                 to="/team"
-                className="inline-block text-indigo-600 dark:text-indigo-400 font-semibold hover:underline"
+                className="inline-block text-black font-semibold hover:underline"
               >
                 ← Back to Team
               </Link>

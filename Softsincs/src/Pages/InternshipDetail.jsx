@@ -39,7 +39,7 @@ const InternshipDetail = () => {
       />
 
       <div className="max-w-4xl mx-auto px-6 py-20">
-        <h1 className="text-4xl font-bold text-indigo-800 mb-4">{internship.title}</h1>
+        <h1 className="text-4xl font-bold text-black mb-4">{internship.title}</h1>
         <div className="text-gray-600 mb-6">
           <p><strong>Type:</strong> {internship.type}</p>
           <p><strong>Location:</strong> {internship.location}</p>
@@ -51,7 +51,7 @@ const InternshipDetail = () => {
 
         {internship.responsibilities && (
           <>
-            <h2 className="text-xl font-semibold text-indigo-700 mt-6 mb-2">Responsibilities</h2>
+            <h2 className="text-xl font-semibold text-black mt-6 mb-2">Responsibilities</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               {internship.responsibilities.map((res, idx) => (
                 <li key={idx}>{res}</li>
@@ -62,7 +62,7 @@ const InternshipDetail = () => {
 
         {internship.requirements && (
           <>
-            <h2 className="text-xl font-semibold text-indigo-700 mt-6 mb-2">Requirements</h2>
+            <h2 className="text-xl font-semibold text-black mt-6 mb-2">Requirements</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               {internship.requirements.map((req, idx) => (
                 <li key={idx}>{req}</li>
@@ -77,7 +77,7 @@ const InternshipDetail = () => {
           </p>
           <a
             href="mailto:softsincs@gmail.com"
-            className="text-indigo-600 font-semibold hover:underline"
+            className="text-black font-semibold hover:underline"
           >
             softsincs@gmail.com
           </a>
