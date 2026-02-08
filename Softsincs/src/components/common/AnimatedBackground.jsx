@@ -49,10 +49,10 @@ const AnimatedBackground = () => {
             let scale = 'scale-100';
             
             if (isActive) {
-              opacity = 'opacity-[0.15]';
+              opacity = 'opacity-[0.50]';
               scale = 'scale-110';
             } else if (isPrevious || isNext) {
-              opacity = 'opacity-[0.08]';
+              opacity = 'opacity-[0.50]';
               scale = 'scale-105';
             }
             
